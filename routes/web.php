@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\ConnactController;
 use \App\Http\Controllers\JopController;
 use \App\Http\Controllers\HomeController;
+use \App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,6 +29,13 @@ Route::get('/jop_detail/{id}',[JopController::class,'details'])->name('jop_detai
 Route::get('/connact',[ConnactController::class,'index'])->name('connact-us');
 Route::post('/strore',[ConnactController::class,'store'])->name('store-message');
 
+//show all jop
+Route::get('/showall',[JopController::class,'showall_jop'])->name('showall');
+
+//create profile
+Route::get('/create_profile',[ProfileController::class,'create'])->name('create_profile');
+Route::post('/store_profile',[ProfileController::class,'store'])->name('store_profile');
+Route::get('/profile',[ProfileController::class,'index'])->name('profile');
 
 Route::get('/jop', function () {
     return view('pages.jop-single');

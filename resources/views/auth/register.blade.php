@@ -24,6 +24,7 @@
     <select class="form-control" name='email_type' id="exampleFormControlSelect1">
       <option>Company</option>
       <option>Personal</option>
+      
     </select>
   </div>
   @error('type_email')

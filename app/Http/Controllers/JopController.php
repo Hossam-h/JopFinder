@@ -30,7 +30,12 @@ class JopController extends Controller
         //
     }
 
-    
+    public function showall_jop()
+    {
+        $allljop=Jop::all();
+        return view('pages.allJops',['alljops'=>$allljop]);
+    }
+
 
     /**
      * Store a newly created resource in storage.

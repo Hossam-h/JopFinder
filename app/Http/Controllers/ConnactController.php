@@ -15,7 +15,7 @@ class ConnactController extends Controller
      */
     public function index()
     {
-        dd(Auth::user()->id);
+       // dd(Auth::user()->id);
 
         return view('pages.connact');
     }

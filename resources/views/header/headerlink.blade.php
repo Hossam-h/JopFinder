@@ -63,16 +63,10 @@
                       <li><a href="category.html">Category</a></li>
                       <li><a href="#">Browse Candidates</a></li>
                       <li><a href="new-post.html">Post a Job</a></li>
-                      <li><a href="#">Employeer Profile</a></li>
-                      <li class="has-children">
-                        <a href="#">More Links</a>
-                        <ul class="dropdown">
-                          <li><a href="#">Browse Candidates</a></li>
-                          <li><a href="#">Post a Job</a></li>
-                          <li><a href="#">Employeer Profile</a></li>
-                        </ul>
-                      </li>
-
+                       @auth()
+                      <li><a href="{{route('profile')}}">Profile</a></li>
+                      <li class=""><a href="{{route('create_profile')}}"> Create profile</a> </li>
+                       @endauth()
                     </ul>
                   </li>
                   <li><a href="{{route('connact-us')}}">Contact</a></li>

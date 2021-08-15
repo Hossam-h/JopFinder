@@ -27,9 +27,9 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-12">
+                <!-- <div class="col-md-12">
                   <p class="small">or browse by category: <a href="#" class="category">Category #1</a> <a href="#" class="category">Category #2</a></p>
-                </div>
+                </div> -->
               </div>
               
             </form>
@@ -144,7 +144,8 @@
             </div>
 
             <div class="col-md-12 text-center mt-5">
-              <a href="#" class="btn btn-primary rounded py-3 px-5"><span class="icon-plus-circle"></span> Show More Jobs</a>
+              <a href="{{Route('showall')}}" class="btn btn-primary rounded py-3 px-5">
+                <span class="icon-plus-circle"></span> Show More Jobs</a>
             </div>
           </div>
           <div class="col-md-4 block-16" data-aos="fade-up" data-aos-delay="200">
@@ -210,7 +211,7 @@
           <div class="col-md-6 text-center" data-aos="fade">
             <h1 class="h3 mb-0">Your Dream Job</h1>
             <p class="h3 text-white mb-5">Is Waiting For You</p>
-            <p><a href="#" class="btn btn-outline-warning py-3 px-4">Find Jobs</a> <a href="#" class="btn btn-warning py-3 px-4">Apply For A Job</a></p>
+            <p><a href="{{route('showall')}}" class="btn btn-outline-warning py-3 px-4">Find Jobs</a> </p>
             
           </div>
         </div>
