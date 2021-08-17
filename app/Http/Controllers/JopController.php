@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Jop;
 use App\Models\User;
+use App\Models\Categore;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 class JopController extends Controller
@@ -15,7 +17,8 @@ class JopController extends Controller
      */
     public function index()
     {
-        return view('pages.add_new_jop');
+         $all_category=Categore::all();
+        return view('pages.add_new_jop',['categories' => $all_category]);
     }
 
     /**

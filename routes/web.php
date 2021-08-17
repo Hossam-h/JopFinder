@@ -5,6 +5,7 @@ use \App\Http\Controllers\ConnactController;
 use \App\Http\Controllers\JopController;
 use \App\Http\Controllers\HomeController;
 use \App\Http\Controllers\ProfileController;
+use \App\Http\Controllers\CategoreController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,9 +38,10 @@ Route::get('/create_profile',[ProfileController::class,'create'])->name('create_
 Route::post('/store_profile',[ProfileController::class,'store'])->name('store_profile');
 Route::get('/profile',[ProfileController::class,'index'])->name('profile');
 
+//category routes
+Route::get('/add_category',[CategoreController::class,'create'])->name('create_category');
+Route::post('/store_category',[CategoreController::class,'store'])->name('store_category');
+
 Route::get('/jop', function () {
     return view('pages.jop-single');
-});
-Route::get('/addjop', function () {
-    return view('pages.add_new_jop');
 });

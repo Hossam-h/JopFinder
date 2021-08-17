@@ -58,6 +58,20 @@
               @error('location')
             <span class="alert alert-danger">{{$message}}</span>
             @enderror
+
+            <!--status -->
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Status</label>
+    <select class="form-control" name='category_id' id="exampleFormControlSelect1">
+    @foreach( $categories as $category)
+      <option value="{{$category->id}}">{{$category->category}}</option>
+      @endforeach
+    </select>
+  </div>
+  <!-- @error('status')
+<div> <span class="alert alert-danger"> {{$message}} </span></div> 
+@enderror -->
+
               <div class="row form-group">
                 <div class="col-md-12"><h3>Job Description</h3></div>
                 <div class="col-md-12 mb-3 mb-md-0">

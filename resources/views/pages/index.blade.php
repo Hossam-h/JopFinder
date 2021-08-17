@@ -259,8 +259,4 @@
     </div>
 
     
-
-
-  
-
     @include('footer.footer')

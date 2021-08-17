@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Work+Sans:300,400,700" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+  <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+  <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+
     <link rel="stylesheet" href="{{asset('asset/fonts/icomoon/style.css')}}">
 
     <link rel="stylesheet" href="{{asset('asset/css/bootstrap.min.css')}}">
@@ -15,6 +19,7 @@
     <link rel="stylesheet" href="{{asset('asset/css/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{asset('asset/css/bootstrap-datepicker.css')}}">
     <link rel="stylesheet" href="{{asset('asset/css/animate.css')}}">
+
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
     
@@ -61,7 +66,7 @@
                     <a href="category.html">For Employees</a>
                     <ul class="dropdown arrow-top">
                       <li><a href="category.html">Category</a></li>
-                      <li><a href="#">Browse Candidates</a></li>
+                      <li><a href="{{route('create_category')}}">Add category</a></li>
                       <li><a href="new-post.html">Post a Job</a></li>
                        @auth()
                       <li><a href="{{route('profile')}}">Profile</a></li>
@@ -79,6 +84,9 @@
                   </form>   
                   </li>                
                   @endauth
+                  @auth()
+                  <li><a href="" style="color:red"><i class="fas fa-user-alt"></i></a></li>
+                  @endauth
                   @guest
                   <li><a href="{{url('login')}}">login</a></li>
                   <li><a href="{{url('register')}}">register</a></li>
@@ -89,6 +97,8 @@
                   <li><a href="{{url('addjop')}}"><span class="bg-primary text-white py-3 px-4 rounded"><span class="icon-plus mr-3"></span>Post New Job</span></a></li>
                   @endif
                   @endauth
+                  
+                  
                 </ul>
               </div>
             </nav>
