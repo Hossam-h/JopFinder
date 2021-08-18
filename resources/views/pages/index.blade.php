@@ -1,6 +1,4 @@
 @include('header.headerlink')  
-  
-  
 
     <div class="site-blocks-cover overlay" style="background-image: url('../asset/images/hero_1.jpg');" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
@@ -47,13 +45,17 @@
           </div>
         </div>
         <div class="row">
+        @foreach($categores as $category) 
           <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="100">
-            <a href="#" class="h-100 feature-item">
+          
+          <a href="{{route('show_category',['id'=>$category->id])}}" class="h-100 feature-item">
               <span class="d-block icon flaticon-calculator mb-3 text-primary"></span>
-              <h2>Accounting / Finanace</h2>
+              <h2>{{$category->category}}</h2>
               <span class="counting">10,391</span>
             </a>
+
           </div>
+          @endforeach
           <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="200">
             <a href="#" class="h-100 feature-item">
               <span class="d-block icon flaticon-wrench mb-3 text-primary"></span>

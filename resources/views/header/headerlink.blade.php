@@ -61,13 +61,14 @@
 
                 <ul class="site-menu js-clone-nav d-none d-lg-block">
                 <li><a href="{{route('index')}}">Home</a></li>
-                  <li><a href="categories.html">For Candidates</a></li>
+                  <li><a href="{{route('index_about')}}">About Us</a></li>
                   <li class="has-children">
                     <a href="category.html">For Employees</a>
                     <ul class="dropdown arrow-top">
                       <li><a href="category.html">Category</a></li>
                       <li><a href="{{route('create_category')}}">Add category</a></li>
-                      <li><a href="new-post.html">Post a Job</a></li>
+                      <li><a href="{{route('Team.create')}}">create team</a></li>
+                      <li><a href="{{route('Team.index')}}">all team</a></li>
                        @auth()
                       <li><a href="{{route('profile')}}">Profile</a></li>
                       <li class=""><a href="{{route('create_profile')}}"> Create profile</a> </li>
@@ -84,9 +85,7 @@
                   </form>   
                   </li>                
                   @endauth
-                  @auth()
-                  <li><a href="" style="color:red"><i class="fas fa-user-alt"></i></a></li>
-                  @endauth
+                  
                   @guest
                   <li><a href="{{url('login')}}">login</a></li>
                   <li><a href="{{url('register')}}">register</a></li>

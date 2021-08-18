@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categore;
+use App\Models\Jop;
 use Illuminate\Http\Request;
 
 class CategoreController extends Controller
@@ -51,9 +52,13 @@ class CategoreController extends Controller
      * @param  \App\Models\Categore  $categore
      * @return \Illuminate\Http\Response
      */
-    public function show(Categore $categore)
+    public function show($id)
     {
-        //
+        $show_category=Categore::find($id);
+        $cat_id=$show_category->id;
+        $Show_jop_category=Jop::where('category_id',$cat_id)->get();
+        return view ('category.show_category',['show_jops'=>$Show_jop_category,'id_cat'=>$cat_id]);
+           
     }
 
     /**
@@ -62,9 +67,10 @@ class CategoreController extends Controller
      * @param  \App\Models\Categore  $categore
      * @return \Illuminate\Http\Response
      */
-    public function edit(Categore $categore)
+    public function edit($id)
     {
-        //
+        $edit_cat=Categore::find($id);
+        return view('category.edit',['edit_cat'=>$edit_cat]);
     }
 
     /**
@@ -74,9 +80,19 @@ class CategoreController extends Controller
      * @param  \App\Models\Categore  $categore
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categore $categore)
+    public function update(Request $request,$id)
     {
-        //
+    
+         $request->validate([
+          'category'=>'required|string|min:3|unique:categores,category'
+         ]);
+
+     $ctaegory_update=Categore::find($id);
+   
+     $datas=$request->except(['_token']);
+
+     $ctaegory_update->update($datas);
+
     }
 
     /**
@@ -85,8 +101,12 @@ class CategoreController extends Controller
      * @param  \App\Models\Categore  $categore
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categore $categore)
+    public function destroy($id)
     {
-        //
+        if($id){
+         $cat_delete=Categore::find($id);
+         $cat_delete->delete();
+         return redirect()->route('index');
+        }
     }
 }

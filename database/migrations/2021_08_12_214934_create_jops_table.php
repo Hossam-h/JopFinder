@@ -25,7 +25,7 @@ class CreateJopsTable extends Migration
            
             //$table->integer('u_info_id')->unsigned()->index(); 
 
-            $table->foreign('category_id')->references('id')->on('categores');
+            $table->foreign('category_id')->references('id')->on('categores')->onDelete('cascade');
         });
     }
 

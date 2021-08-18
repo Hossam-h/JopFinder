@@ -1,13 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Home;
-use App\Models\Jop;
-use App\Models\Categore;
+use App\Models\Team;
+use App\Models\About;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class AboutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +14,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
-        $data=Jop::orderBy('id','desc')->take(5)->get();
-        $categores=Categore::all();
-        
-        return view('pages.index',['jops'=>$data , 'categores'=>$categores]);
+        $all_team=Team::all();
+        return view('pages.about',['all_team'=>$all_team]);
+
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -47,10 +44,10 @@ class HomeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Home  $home
+     * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function show(Home $home)
+    public function show(About $about)
     {
         //
     }
@@ -58,10 +55,10 @@ class HomeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Home  $home
+     * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function edit(Home $home)
+    public function edit(About $about)
     {
         //
     }
@@ -70,10 +67,10 @@ class HomeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Home  $home
+     * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Home $home)
+    public function update(Request $request, About $about)
     {
         //
     }
@@ -81,10 +78,10 @@ class HomeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Home  $home
+     * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Home $home)
+    public function destroy(About $about)
     {
         //
     }
