@@ -29,8 +29,13 @@
            
             <div class="row form-group mb-5">
                 <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="fullname">Company</label>
-                  <input type="text" id="fullname" name="company_name" class="form-control" placeholder="eg. Facebook, Inc.">
+                  <label class="font-weight-bold" for="fullname">Select your company name</label>
+                   
+                 <select name="company_name" id="" class="form-control">
+                @foreach($companies_name as $name)
+                <option value="{{$name->name}}">{{$name->name}}</option>
+                @endforeach
+                </select>
                 </div>
               </div>
 

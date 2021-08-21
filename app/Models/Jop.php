@@ -14,4 +14,8 @@ class Jop extends Model
     public function category(){
         return $this->belongsTo(Categore::class);
     }
+    
+    public function users(){
+        return $this->belongsToMany(User::class,'user_jop');
+    }
 }

@@ -17,6 +17,7 @@ class ProfileController extends Controller
     {
        $my_profile=Profile::where('user_id', Auth::user()->id)->first();
 
+
         return view('profiles.profile',['own_profile'=>$my_profile]);
 
     }
@@ -86,9 +87,11 @@ class ProfileController extends Controller
      * @param  \App\Models\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function edit(Profile $profile)
+    public function edit($id)
     {
-        //
+        $edit_profile=Profile::find($id);
+
+        return view('profiles.edit_profile',['edit'=>$edit_profile]);
     }
 
     /**
@@ -98,9 +101,35 @@ class ProfileController extends Controller
      * @param  \App\Models\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Profile $profile)
+    public function update(Request $request, $id)
     {
-        //
+        $update_profile=Profile::find($id);
+        $request->validate([
+            'name'=>'required|string',
+            'gender'=>'required|in:mail,femail',
+            'status'=>'required|in:Married,Single',
+            'education_degree'=>'required',
+            'user_id'=>'unique:profiles,user_id'
+  ]); 
+
+         $data=$request->except(['_token','image']);
+        
+        $image=$request->file('image');
+        $image_name= rand() . '.' .$image->getClientOriginalExtension();
+        $image->move('images\team',$image_name);
+
+        if($update_profile->$image){
+            unlink('images/team'.$row->image);
+          
+          }
+        $data['image']=$image_name;
+        $update_profile->update($data);   
+
+        
+        $my_profile=Profile::where('user_id', Auth::user()->id)->first();
+
+        return view('profiles.profile',['own_profile'=>$my_profile]);
+
     }
 
     /**
@@ -109,8 +138,14 @@ class ProfileController extends Controller
      * @param  \App\Models\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Profile $profile)
+    public function destroy($id)
     {
-        //
+    
+        $row=Profile::find($id);
+        if($row){
+            $row->delete();
+        }
+        return view('profiles.profile');
+        
     }
 }

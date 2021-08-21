@@ -1,5 +1,7 @@
 @include('header.headerlink')
 
+
+@if(isset($own_profile->id))
 <div class="container">
     
   <div class="name">
@@ -20,3 +22,23 @@
     <h5>Education degree:{{$own_profile->education_degree}}</h5>
     </div>
 </div>
+
+                                
+                  <form style='margin:15px; display:inline-block' action="{{route('delete_profile',['id'=>$own_profile->id])}}" method="POST">
+                     @csrf
+                     {{ method_field('DELETE') }} 
+
+
+                  <button type="submit" class="btn btn-danger"> Delete</button>
+                </form>
+
+                <a href="{{route('edit_profile',['id'=>$own_profile->id])}}"  style='margin:15px;' class="btn btn-warning">Edit</a>
+       
+                          
+@else
+  <h3>Sorry You don't have a profile</h3>
+
+@endif
+
+
+@include('footer.footer')

@@ -69,10 +69,24 @@
                       <li><a href="{{route('create_category')}}">Add category</a></li>
                       <li><a href="{{route('Team.create')}}">create team</a></li>
                       <li><a href="{{route('Team.index')}}">all team</a></li>
-                       @auth()
+                      
+                      @auth()
+                      @if(auth()->user()->email_type=='Personal')
+                      <li><a href="{{route('apply_person')}}">applies of empolyee</a></li>
+                      @endif 
+                      @endauth()
+
+                      @auth()
+                      @if(auth()->user()->email_type=='Company')
+                      <li><a href="{{route('apply_comapny')}}">My post jop</a></li>
+                      @endif 
+                      @endauth()
+                      
+                      @auth()
                       <li><a href="{{route('profile')}}">Profile</a></li>
                       <li class=""><a href="{{route('create_profile')}}"> Create profile</a> </li>
                        @endauth()
+
                     </ul>
                   </li>
                   <li><a href="{{route('connact-us')}}">Contact</a></li>
@@ -92,7 +106,7 @@
                   @endguest
                  
                   @auth()
-                  @if(auth()->user()->email_type =="Company")
+                  @if(auth()->user()->email_type == 'Company')
                   <li><a href="{{url('addjop')}}"><span class="bg-primary text-white py-3 px-4 rounded"><span class="icon-plus mr-3"></span>Post New Job</span></a></li>
                   @endif
                   @endauth

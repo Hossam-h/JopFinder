@@ -52,7 +52,7 @@
               <p>Dignissimos ipsa quibusdam id qui maiores magnam, nesciunt? Voluptatibus nulla quas itaque nostrum necessitatibus repudiandae quaerat facere, amet aperiam iste aspernatur ratione cupiditate est voluptates non. Suscipit corporis, soluta neque.</p>
               <p>Pariatur itaque reiciendis consectetur, deserunt quam adipisci odio doloribus voluptatem laboriosam magni ut repellat tempore? Minus sit officia impedit veritatis reiciendis debitis iure, porro in quaerat inventore nisi sequi quos!</p>
 
-              <p class="mt-5"><a href="#" class="btn btn-primary  py-2 px-4">Apply Job</a></p>
+              <p class="mt-5"><a href="{{route('show_relation',['id'=>$jop_detail->id])}}" class="btn btn-primary  py-2 px-4">Apply Job</a></p>
             </div>
           </div>
 

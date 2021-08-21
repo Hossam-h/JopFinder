@@ -18,7 +18,9 @@ class JopController extends Controller
     public function index()
     {
          $all_category=Categore::all();
-        return view('pages.add_new_jop',['categories' => $all_category]);
+         $all_company_name=User::where('email_type','Company')->get();
+         
+        return view('pages.add_new_jop',['categories' => $all_category , 'companies_name'=>$all_company_name]);
     }
 
     /**
@@ -31,6 +33,23 @@ class JopController extends Controller
      public function create()
     {
         //
+    }
+
+    public function show($id)
+    {
+        $apply_auth=User::find(Auth::user()->id);
+        if($apply_auth->id){
+
+            $apply_jop=Jop::find($id);
+            $apply_auth=User::find(Auth::user()->id);
+            
+            $apply_jop->users()->attach([$apply_auth->id]);
+    
+        }
+        
+        return redirect()->route('index');
+        //dd($detailjop->jop_name,$detailjop->users);
+    
     }
 
     public function showall_jop()

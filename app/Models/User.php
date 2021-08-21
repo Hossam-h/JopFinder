@@ -47,4 +47,8 @@ class User extends Authenticatable
     public function profile(){
          return $this->hasOne(Profile::class);
     }
+
+    public function jops(){
+        return $this->belongsToMany(Jop::class,'user_jop');
+    }
 }
