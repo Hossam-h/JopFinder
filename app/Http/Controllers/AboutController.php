@@ -14,8 +14,10 @@ class AboutController extends Controller
      */
     public function index()
     {
+        $about_us=About::first();
+
         $all_team=Team::all();
-        return view('pages.about',['all_team'=>$all_team]);
+        return view('pages.about',['all_team'=>$all_team ,'about_us'=>$about_us]);
 
     }
 
@@ -58,9 +60,12 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function edit(About $about)
+    public function edit($id)
     {
-        //
+        $edit_about=About::find($id);
+    
+        return view('pages.edit_about',['edit'=>$edit_about]);
+
     }
 
     /**
@@ -70,9 +75,23 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, About $about)
+    public function update(Request $request,$id)
     {
-        //
+        $update_data=About::find($id);
+
+            if($update_data){
+            $data=$request->except('_token');
+
+            $request->validate([
+                'about_us'=>'required|min:120'
+            ]);
+            $update_data->update($data);
+            }
+           
+        $about_us=About::first();
+        $all_team=Team::all();
+        return view('pages.about',['all_team'=>$all_team ,'about_us'=>$about_us]);
+
     }
 
     /**

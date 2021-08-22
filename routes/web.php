@@ -19,6 +19,7 @@ use \App\Http\Controllers\ApplyController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/addjop',[JopController::class,'index'])->name('add');
 Route::post('/store_jop',[JopController::class,'store'])->name('store_jop');
 
@@ -27,7 +28,8 @@ Route::get('/', [HomeController::class,'index'])->name('index');
 
 //about
 Route::get('/about-us', [AboutController::class,'index'])->name('index_about');
-
+Route::get('/edit/about-us/{id}', [AboutController::class,'edit'])->name('edit_about');
+Route::post('/update/about-us/{id}', [AboutController::class,'update'])->name('update_about');
 
 //route of connact
 Route::get('/connact',[ConnactController::class,'index'])->name('connact-us');

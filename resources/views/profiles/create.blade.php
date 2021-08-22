@@ -1,4 +1,8 @@
 @include('header.headerlink');
+
+@if(isset($own_profile->id))
+<h1>you allredy have a profile</h1>
+@else
 <form action="{{route('store_profile')}}" method="post" enctype="multipart/form-data" >
      @csrf 
 <div class="form-group" >
@@ -69,3 +73,4 @@
 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+@endif

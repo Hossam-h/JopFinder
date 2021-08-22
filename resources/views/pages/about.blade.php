@@ -28,8 +28,11 @@
               <h2>About Us</h2>
             </div>
 
-            <p class="mb-4 h5 font-italic lineheight1-5">&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nisi Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nobis magni eaque velit eum, id rem eveniet dolor possimus voluptas..&rdquo;</p>
-            <p>&mdash; <strong class="text-black font-weight-bold">John Holmes</strong>, Marketing Strategist</p>
+            <p class="mb-4 h5 font-italic lineheight1-5">&ldquo;
+            {{$about_us->about_us}}  
+            &rdquo;</p>
+      
+            <p><a href="{{route('edit_about',['id'=>$about_us->id])}}" class="btn btn-warning">edit</a></p>
             <p><a href="https://vimeo.com/28959265" class="popup-vimeo text-uppercase">Watch Video <span class="icon-arrow-right small"></span></a></p>
           </div>
         </div>
