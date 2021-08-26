@@ -9,6 +9,8 @@ use \App\Http\Controllers\CategoreController;
 use \App\Http\Controllers\AboutController;
 use \App\Http\Controllers\TeamController;
 use \App\Http\Controllers\ApplyController;
+use \App\Http\Controllers\AdmindashController;
+use \App\Http\Controllers\QuestionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,9 +56,10 @@ Route::delete('/delete_profile/{id}',[ProfileController::class,'destroy'])->name
 Route::get('/add_category',[CategoreController::class,'create'])->name('create_category');
 Route::post('/store_category',[CategoreController::class,'store'])->name('store_category');
 Route::get('/show_category/{id}',[CategoreController::class,'show'])->name('show_category')->where(['id'=>'[0-9]+']);
-Route::post('/delete_category/{id}',[CategoreController::class,'destroy'])->where(['id'=>'[0-9]+'])->name('destroy_category');
+Route::delete('/delete_category/{id}',[CategoreController::class,'destroy'])->where(['id'=>'[0-9]+'])->name('destroy_category');
 Route::get('/edit_category/{id}',[CategoreController::class,'edit'])->name('edit_category')->where(['id'=>'[0-9]+']);
 Route::post('/update_category/{id}',[CategoreController::class,'update'])->name('update_category');
+Route::get('/show_all_category',[CategoreController::class,'show_all'])->name('all_category');
 
 //our teams
 Route::resource('/Team',TeamController::class);
@@ -65,3 +68,9 @@ Route::resource('/Team',TeamController::class);
 Route::get('applies',[ApplyController::class,'apply_person'])->name('apply_person');
 Route::get('applies_comapny',[ApplyController::class,'apply_company'])->name('apply_comapny');
 Route::get('applies_comapny/{id}',[ApplyController::class,'show_applies'])->name('show_apply');
+
+//admin_dashboard
+Route::get('dash',[AdmindashController::class,'getall'])->name('dash');
+
+//qusetion and answer
+Route::resource('/question',QuestionController::class);

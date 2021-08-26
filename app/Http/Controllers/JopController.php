@@ -43,11 +43,15 @@ class JopController extends Controller
             $apply_jop=Jop::find($id);
             $apply_auth=User::find(Auth::user()->id);
             
-            $apply_jop->users()->attach([$apply_auth->id]);
+           if($apply_jop->users()->syncWithoutDetaching([$apply_auth->id])){
+            return redirect()->route('index');
+           } else{
+            return redirect()->route('index');
+           }
     
         }
         
-        return redirect()->route('index');
+        
         //dd($detailjop->jop_name,$detailjop->users);
     
     }

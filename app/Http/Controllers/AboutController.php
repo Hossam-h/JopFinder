@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Team;
 use App\Models\About;
+use App\Models\Question;
+
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -17,7 +19,8 @@ class AboutController extends Controller
         $about_us=About::first();
 
         $all_team=Team::all();
-        return view('pages.about',['all_team'=>$all_team ,'about_us'=>$about_us]);
+        $all_ques=Question::all();
+        return view('pages.about',['all_team'=>$all_team ,'about_us'=>$about_us,'all_ques'=>$all_ques]);
 
     }
 
@@ -62,8 +65,9 @@ class AboutController extends Controller
      */
     public function edit($id)
     {
+        
         $edit_about=About::find($id);
-    
+        
         return view('pages.edit_about',['edit'=>$edit_about]);
 
     }
@@ -77,20 +81,40 @@ class AboutController extends Controller
      */
     public function update(Request $request,$id)
     {
-        $update_data=About::find($id);
 
-            if($update_data){
-            $data=$request->except('_token');
+        
+        $row=About::find($id);
+
+            if($row){
+            $data=$request->except('_token','image');
 
             $request->validate([
-                'about_us'=>'required|min:120'
+                'about_us'=>'required|min:120',
+
+                'image'=>'required'
             ]);
-            $update_data->update($data);
+
+            $image=$request->file('image');
+        
+            $image_name= rand() . '.' .$image->getClientOriginalExtension();
+        
+            $image->move('images\team',$image_name);
+    
+            $data['image']=$image_name;
+
+            if($row->$image){
+                unlink('images/team'.$row->image);
+              
+              }
+    
+             $row->update($data); 
+
+            
             }
            
         $about_us=About::first();
         $all_team=Team::all();
-        return view('pages.about',['all_team'=>$all_team ,'about_us'=>$about_us]);
+        return view('pages.about',['all_team'=>$all_team ,'about_us'=>$row]);
 
     }
 

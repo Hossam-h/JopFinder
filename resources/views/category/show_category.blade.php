@@ -1,9 +1,14 @@
 
 @include('header.headerlink')
 
-@foreach($show_jops as $jop)
 
-              <a href="{{route('jop_detail',['id'=>$jop->id])}}" style="margin-top:10px;"class="job-item d-block d-md-flex align-items-center fulltime">
+
+
+@foreach($show_jops as $jop)
+@if(! isset($jop->id))
+<h2 style='color:red'>sgvsdf</h2>
+@else
+<a href="{{route('jop_detail',['id'=>$jop->id])}}" style="margin-top:10px;"class="job-item d-block d-md-flex align-items-center fulltime">
                 <div class="company-logo blank-logo text-center text-md-left pl-3">
                 <img src="{{asset('asset/images/company_logo_blank.png')}}" alt="Image" class="img-fluid mx-auto">
                 </div>
@@ -23,15 +28,10 @@
                   </div>
                 </div>  
               </a>
-                  
+              @endif
               @endforeach
+              
+              
+        
 
 
-<form action="{{route('destroy_category',['id'=>$id_cat])}}" method="post" style="margin:20px; cursore:pointer;">
-@csrf
-<input type="submit" value="Delete Category" class="nav-link" style="background-color:#50504d; color:white; cursor:pointer;">
-</form>
-<form action="{{route('edit_category',['id'=>$id_cat])}}" method="get" style="margin:20px; cursore:pointer;">
-
-<input type="submit" value="update Category" class="nav-link" style="background-color:#50504d; color:white; cursor:pointer;">
-</form>

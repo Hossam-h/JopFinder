@@ -63,12 +63,11 @@
                 <li><a href="{{route('index')}}">Home</a></li>
                   <li><a href="{{route('index_about')}}">About Us</a></li>
                   <li class="has-children">
-                    <a href="category.html">For Employees</a>
+                    <a href="#">For Employees</a>
                     <ul class="dropdown arrow-top">
                       <li><a href="category.html">Category</a></li>
                       <li><a href="{{route('create_category')}}">Add category</a></li>
-                      <li><a href="{{route('Team.create')}}">create team</a></li>
-                      <li><a href="{{route('Team.index')}}">all team</a></li>
+                      <li><a href="{{route('dash')}}">Admin_dasboard</a></li>
                       
                       @auth()
                       @if(auth()->user()->email_type=='Personal')

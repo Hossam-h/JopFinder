@@ -1,6 +1,7 @@
+
 @include('header.headerlink')
 
-<form action="{{route('update_about',['id'=>$edit->id])}}" method="post" class="p-5 bg-white">
+<form action="{{route('update_about',['id'=>$edit->id])}}" method="post" class="p-5 bg-white" enctype="multipart/form-data">
               @csrf
 <div class="row form-group">
                 <div class="col-md-12"><h3>Job Description</h3></div>
@@ -11,6 +12,13 @@
               @error('about_us')
             <span class="alert alert-danger">{{$message}}</span>
             @enderror
+
+          
+                <div class="m-2 ">
+                  <input type="file" value="" class="" name="image">  
+                </div>
+            
+
 
               <div class="row form-group">
                 <div class="col-md-12">

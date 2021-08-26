@@ -45,7 +45,13 @@ class CategoreController extends Controller
 
         return redirect()->route('create_category');
     }
+    
+     public function show_all(){
+         $all_category=Categore::all();
+         
+         return view('category.show_all',['all_category'=>$all_category]);
 
+    }
     /**
      * Display the specified resource.
      *
@@ -93,6 +99,8 @@ class CategoreController extends Controller
 
      $ctaegory_update->update($datas);
 
+     return redirect()->route('all_category');
+
     }
 
     /**
@@ -106,7 +114,7 @@ class CategoreController extends Controller
         if($id){
          $cat_delete=Categore::find($id);
          $cat_delete->delete();
-         return redirect()->route('index');
+         return redirect()->route('all_category');
         }
     }
 }
