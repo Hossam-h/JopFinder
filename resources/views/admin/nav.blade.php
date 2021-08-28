@@ -29,8 +29,8 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link pt-0" href="register.php">
-    <i class="fas fa-fw fa-chart-area"></i>
+  <a class="nav-link pt-0" href="{{route('show_all_user.index')}}">
+  <i class="fas fa-user"></i>
     <span>Users</span></a>
 </li>
 
@@ -40,15 +40,10 @@
     <span>Profiles</span></a>
 </li>
 
-<li class="nav-item ">
-  <a class="nav-link pt-0" href="register.php">
-    <i class="fas fa-fw fa-chart-area"></i>
-    <span>Categories</span></a>
-</li>
 
 <li class="nav-item ">
 <a class="nav-link pt-0" href="{{route('edit_about',['id'=>$about_us->id])}}">
-    <i class="fas fa-fw fa-chart-area"></i>
+<i class="far fa-edit"></i>
     <span>edit about</span></a>
 </li>
 
@@ -99,8 +94,9 @@
 </li> -->
 
 <li class="nav-item ml-4">
-<div class="dropdown dash">
-  <button class=" dropdown-toggle dropdown-toggle-dash " style="background:none;border:none; outline:none; color:rgba(255,255,255,.8) " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<div class="dropdown dash_admin">
+<i class="fas fa-question" ></i>
+  <button class=" dropdown-toggle dropdown-toggle-dash"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   Questions
   </button>
   <div class="dropdown-menu p-4" aria-labelledby="dropdownMenuButton">

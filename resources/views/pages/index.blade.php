@@ -5,17 +5,17 @@
         <div class="row align-items-center">
           <div class="col-12" data-aos="fade">
             <h1>Find Job</h1>
-            <form action="#">
+            <form action="{{route('search')}}">
               <div class="row mb-3">
                 <div class="col-md-9">
                   <div class="row">
                     <div class="col-md-6 mb-3 mb-md-0">
-                      <input type="text" class="mr-3 form-control border-0 px-4" placeholder="job title, keywords or company name ">
+                      <input type="text" name="jop_name" class="mr-3 form-control border-0 px-4" placeholder="job title">
                     </div>
                     <div class="col-md-6 mb-3 mb-md-0">
                       <div class="input-wrap">
                         <span class="icon icon-room"></span>
-                      <input type="text" class="form-control form-control-block search-input  border-0 px-4" id="autocomplete" placeholder="city, province or region" onFocus="geolocate()">
+                      <input type="text" id="city_name" name="city" class="form-control form-control-block search-input  border-0 px-4"  placeholder="city">
                       </div>
                     </div>
                   </div>
@@ -24,18 +24,14 @@
                   <input type="submit" class="btn btn-search btn-primary btn-block" value="Search">
                 </div>
               </div>
-              <div class="row">
-                <!-- <div class="col-md-12">
-                  <p class="small">or browse by category: <a href="#" class="category">Category #1</a> <a href="#" class="category">Category #2</a></p>
-                </div> -->
-              </div>
               
             </form>
           </div>
+        
         </div>
       </div>
     </div>
-    
+    <div class="col-md-6 mb-3 mb-md-0" id='result'></div> 
 
     <div class="site-section">
       <div class="container">
@@ -117,7 +113,6 @@
           <div class="col-md-8 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="100">
             <h2 class="mb-5 h3">Recent Jobs</h2>
             <div class="rounded border jobs-wrap">
-
 
                 @foreach($jops as $jop)
               <a href="{{route('jop_detail',['id'=>$jop->id])}}" class="job-item d-block d-md-flex align-items-center fulltime">
@@ -261,4 +256,7 @@
     </div>
 
     
+    
     @include('footer.footer')
+
+   

@@ -33,6 +33,23 @@ class HomeController extends Controller
         //
     }
 
+    public function search_ajax(){
+        return view ('pages.ajax');
+    }
+
+    public function search(Request $request)
+    {
+        $search=$request->except(['_token']);
+        $name_jop=$search['jop_name'];
+        $name_city=$search['city'];
+//serch_jops
+        
+        $categores=Jop::where('jop_name','like','%'.$name_jop.'%')->Where('location', 'like','%'.$name_city.'%')->get();
+        
+        return view('pages.search',['jops'=>$categores]);
+        
+    }
+
     /**
      * Store a newly created resource in storage.
      *

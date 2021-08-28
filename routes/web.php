@@ -11,6 +11,8 @@ use \App\Http\Controllers\TeamController;
 use \App\Http\Controllers\ApplyController;
 use \App\Http\Controllers\AdmindashController;
 use \App\Http\Controllers\QuestionController;
+use \App\Http\Controllers\Cruduser;
+use \App\Http\Controllers\LiveSearch;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -68,9 +70,21 @@ Route::resource('/Team',TeamController::class);
 Route::get('applies',[ApplyController::class,'apply_person'])->name('apply_person');
 Route::get('applies_comapny',[ApplyController::class,'apply_company'])->name('apply_comapny');
 Route::get('applies_comapny/{id}',[ApplyController::class,'show_applies'])->name('show_apply');
+Route::delete('delete_relation/{id}',[ApplyController::class,'delete_relation'])->name('delete_relation');
+
+//users
+Route::resource('show_all_user',Cruduser::class);
+
 
 //admin_dashboard
 Route::get('dash',[AdmindashController::class,'getall'])->name('dash');
 
 //qusetion and answer
 Route::resource('/question',QuestionController::class);
+
+//-----------------------
+Route::get('search',[HomeController::class,'search'])->name('search');
+
+Route::get('/live_search', [LiveSearch::class,'index']);
+Route::get('/live_search/action', [LiveSearch::class,'action'])->name('live_search.action');
+

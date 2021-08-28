@@ -1,5 +1,5 @@
 @include('header.headerlink')
-
+<div class="container col-sm-8 col-lg-6 ">
 <form action="{{url('register')}}" method="post">
     @csrf
 <div class="form-group">
@@ -54,3 +54,4 @@
 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+</div>

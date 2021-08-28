@@ -9,21 +9,22 @@
                             <tr>
                                 <th>id</th>
                                 <th>name</th>
-                                <th>jop</th>
-                                <th>image</th>                        
-                                <th>Edit</th>
-                                <th>Delete</th>
+                                <th>email</th>
+                                <th>email_type</th>
+                                <th>delete</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                            @foreach($applies_jop as $apply)
-                                <td>{{$apply->id}}</td>
-                                <td>{{$apply->name}}</td>
-                                <td>{{$apply->email}}</td>
+                            
+                            @foreach($show_all as $user)
+                                <td>{{$user->id}}</td>
+                                <td>{{$user->name}}</td>
+                                <td>{{$user->email}}</td>
+                                <td>{{$user->email_type}}</td>
                                 
-                                <td>
-                                <form action="{{route('delete_relation',['id'=>$apply->id .$jop_id])}}" method="post">
+                               <td>
+                         <form action="{{route('show_all_user.destroy',['show_all_user'=>$user->id])}}" method="post">
                               @csrf
                                {{method_field('delete')}}
                              <button type="submit" class="btn btn-danger"> Delete</button>
@@ -32,7 +33,11 @@
                             </tr>
                             @endforeach
                             
- 
+                      
                         </tbody>
                     </table>
                 </div>
+
+
+
+

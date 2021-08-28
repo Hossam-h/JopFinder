@@ -63,6 +63,9 @@
   </div>
 
   <script src="{{asset('asset/js/jquery-3.3.1.min.js')}}"></script>
+  <script src="{{asset('asset/js/jquery-3.0.0.js')}}"></script>
+
+  
   <script src="{{asset('asset/js/jquery-migrate-3.0.1.min.js')}}"></script>
   <script src="{{asset('asset/js/jquery-ui.js')}}"></script>
   <script src="{{asset('asset/js/popper.min.js')}}"></script>
@@ -79,7 +82,14 @@
 
   <script src="{{asset('asset/js/main.js')}}"></script>
     
-
+  
+  <script>
+//     
+  </script>
+ 
+  
+  
+      
   <script>
       document.addEventListener('DOMContentLoaded', function() {
                 var mediaElements = document.querySelectorAll('video, audio'), total = mediaElements.length;

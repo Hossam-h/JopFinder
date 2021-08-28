@@ -32,9 +32,21 @@ class ApplyController extends Controller
     public function show_applies($id){
         
         $apply_jop=Jop::find($id);
+        
         $applies_jop=$apply_jop->users;
 
-        return view('applies.related_applies',['applies_jop'=>$applies_jop]);
+        return view('applies.related_applies',['applies_jop'=>$applies_jop,'jop_id'=>$apply_jop->id]);
                 
+    }
+    public function delete_relation($id){
+        $jop_id=jop::find($id[1]);
+    
+        $apply_person=User::find($id[0]);
+//to delete one column on many to many
+        $apply_person->jops()->wherePivot('jop_id',$jop_id->id)->detach();
+
+return redirect()->route('show_apply',['id'=>$jop_id->id]);
+
+
     }
 }
