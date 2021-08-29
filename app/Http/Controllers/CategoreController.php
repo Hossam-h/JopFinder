@@ -38,6 +38,7 @@ class CategoreController extends Controller
     {
         $request->validate([
             'category'=>'required|string|unique:categores,category',
+            'icon'=>'required|string|unique:categores,icon'
             
         ]);
         
@@ -90,7 +91,8 @@ class CategoreController extends Controller
     {
     
          $request->validate([
-          'category'=>'required|string|min:3|unique:categores,category'
+          'category'=>'required|string|min:3|unique:categores,category',
+          'icon'=>'required|string|unique:categores,icon'
          ]);
 
      $ctaegory_update=Categore::find($id);

@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="{{asset('asset/fonts/icomoon/style.css')}}">
 
     <link rel="stylesheet" href="{{asset('asset/css/bootstrap.min.css')}}">
+    
+    <link rel="stylesheet" href="{{asset('asset/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('asset/css/magnific-popup.css')}}">
     <link rel="stylesheet" href="{{asset('asset/css/jquery-ui.css')}}">
     <link rel="stylesheet" href="{{asset('asset/css/owl.carousel.min.css')}}">
@@ -49,7 +51,7 @@
   
   <div class="container">
     <div class="site-navbar bg-light">
-      <div class="py-1">
+      
         <div class="row align-items-center">
           <div class="col-2">
             <h2 class="mb-0 site-logo"><a href="index.html">Job<strong class="font-weight-bold">Finder</strong> </a></h2>
@@ -61,6 +63,7 @@
 
                 <ul class="site-menu js-clone-nav d-none d-lg-block">
                 <li><a href="{{route('index')}}">Home</a></li>
+              
                   <li><a href="{{route('index_about')}}">About Us</a></li>
                   <li class="has-children">
                     <a href="#">For Employees</a>
@@ -68,9 +71,10 @@
                       <li><a href="category.html">Category</a></li>
                       <li><a href="{{route('create_category')}}">Add category</a></li>
                       <li><a href="{{route('dash')}}">Admin_dasboard</a></li>
-                      
+                     
                       @auth()
                       @if(auth()->user()->email_type=='Personal')
+
                       <li><a href="{{route('apply_person')}}">applies of empolyee</a></li>
                       @endif 
                       @endauth()
@@ -109,6 +113,16 @@
                   <li><a href="{{url('addjop')}}"><span class="bg-primary text-white py-3 px-4 rounded"><span class="icon-plus mr-3"></span>Post New Job</span></a></li>
                   @endif
                   @endauth
+
+
+                  @auth()    
+                  <li class="user_header"><a href="{{route('profile')}}">
+                    <i class="fas fa-user"></i> <br>
+                    <span>{{auth()->user()->name}}</span>
+                  </a></li>
+                
+                  @endauth()
+
                   
                   
                 </ul>
@@ -116,7 +130,7 @@
             </nav>
           </div>
         </div>
-      </div>
+      
     </div>
   </div>
 </div>

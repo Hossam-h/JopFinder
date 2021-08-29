@@ -8,7 +8,7 @@
 @if(! isset($jop->id))
 <h2 style='color:red'>sgvsdf</h2>
 @else
-<a href="{{route('jop_detail',['id'=>$jop->id])}}" style="margin-top:10px;"class="job-item d-block d-md-flex align-items-center fulltime">
+<a href="{{route('jop_detail',['id'=>$jop->id])}}" style="margin-top:50px;"class="job-item d-block d-md-flex align-items-center fulltime">
                 <div class="company-logo blank-logo text-center text-md-left pl-3">
                 <img src="{{asset('asset/images/company_logo_blank.png')}}" alt="Image" class="img-fluid mx-auto">
                 </div>

@@ -45,7 +45,7 @@
           <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="100">
           
           <a href="{{route('show_category',['id'=>$category->id])}}" class="h-100 feature-item">
-              <span class="d-block icon flaticon-calculator mb-3 text-primary"></span>
+          <i class="fas {{$category->icon}}" style='font-size:30px; padding-bottom:30px'></i>
               <h2>{{$category->category}}</h2>
               <span class="counting">10,391</span>
             </a>

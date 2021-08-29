@@ -9,6 +9,7 @@
                             <tr>
                                 <th>id</th>
                                 <th>name</th>
+                                <th>icon</th>
                                 <th>Edit</th>
                                 <th>delete</th>
                             </tr>
@@ -18,6 +19,7 @@
                             @foreach($all_category as $cat)
                                 <td>{{$cat->id}}</td>
                                 <td>{{$cat->category}}</td>
+                                <td>{{$cat->icon}}</td>
                                 
                                
                                 <td><a href="{{route('edit_category',['id'=> $cat->id])}}" class="btn btn-warning">Edit</a></td>

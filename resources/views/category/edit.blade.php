@@ -5,10 +5,21 @@
                   @csrf
           
             <div class="form-group text-center">
-            <label for="exampleInputEmail1">update name</label>
+            <label for="exampleInputEmail1">update Name</label>
             <input type="text" value="{{$edit_cat->category}}"class="form-control" name="category"id="exampleInputEmail1" aria-describedby="emailHelp">
            </div>
         @error('category')
+         <div>
+        <span class="alert alert-danger">{{$message}}</span>
+         </div> 
+         @enderror
+
+
+         <div class="form-group text-center">
+            <label for="exampleInputEmail1">update Icon</label>
+            <input type="text" class="form-control" name="icon"id="exampleInputEmail1" aria-describedby="emailHelp">
+           </div>
+        @error('icon')
          <div>
         <span class="alert alert-danger">{{$message}}</span>
          </div> 

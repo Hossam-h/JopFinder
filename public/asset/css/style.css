@@ -211,12 +211,15 @@ a {
     transform: translateY(-50%); }
 
 /* Navbar */
+.pb-1{
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
 .site-navbar-wrap {
   background: #fff !important;
   position: fixed;
   z-index: 99;
   width: 100%;
-  padding: 20px 0;
   margin-bottom: 113px;
   left: 0;
   -webkit-transition: .3s all ease;
@@ -263,7 +266,7 @@ a {
       padding: 10px 5px; }
       .site-navbar .site-navigation .site-menu > li > a {
         padding: 10px 10px;
-        text-transform: uppercase;
+        
         letter-spacing: .05em;
         color: rgba(0, 0, 0, 0.6);
         font-size: 15px;
@@ -279,6 +282,19 @@ a {
       .site-navbar .site-navigation .site-menu .has-children > a {
         position: relative;
         padding-right: 20px; }
+
+        .site-navbar .site-navigation .site-menu > li > a i{
+        text-align: center;
+        font-size: 25px;
+        padding-right: 12px;
+        padding-top: 0px;
+        }
+
+
+        .site-navbar .site-navigation .site-menu > li > a span{
+          text-align: center;
+          padding-left: 10px;
+          }
         .site-navbar .site-navigation .site-menu .has-children > a:before {
           position: absolute;
           content: "\e313";

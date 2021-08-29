@@ -9,7 +9,7 @@ class Categore extends Model
 {
     use HasFactory;
 
-    protected $fillable=['category'];
+    protected $fillable=['category','icon'];
     public function jops(){
         return $this->hasMany(Jop::class);
     }
