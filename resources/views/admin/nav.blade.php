@@ -63,6 +63,7 @@
 
 
 
+
 <!-- Nav Item - Utilities Collapse Menu -->
 <li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
@@ -78,30 +79,33 @@
   </div>
 </li>
 
-<!-- 
-<li class="nav-item">
-  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-    <i class="fas fa-fw fa-wrench"></i>
-    <span>Questions</span>
-  </a>
-  <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-    <div class="bg-white py-2 collapse-inner rounded">
-      
-    <a class="collapse-item" href="{{route('question.create')}}">create question</a>
-      <a class="collapse-item" href="{{route('question.index')}}">edit or delete question</a>
-    </div>
+
+
+
+<li class="nav-item ml-4">
+<div class="dropdown dash_admin">
+<i class="fas fa-concierge-bell"></i>
+  <button class=" dropdown-toggle dropdown-toggle-dash"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  Question
+  </button>
+  <div class="dropdown-menu p-4" aria-labelledby="dropdownMenuButton">
+  <a class="collapse-item pt-4" style="list-style:none; color:black; text-decoration:none " href="{{route('question.create')}}">create  Question</a> <br>
+      <a class="collapse-item pt-8" style="list-style:none; color:black;text-decoration:none "  href="{{route('question.index')}}">edit or delete  Question</a>
   </div>
-</li> -->
+</div>
+</li>
+
+
 
 <li class="nav-item ml-4">
 <div class="dropdown dash_admin">
 <i class="fas fa-question" ></i>
-  <button class=" dropdown-toggle dropdown-toggle-dash"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  Questions
+  <button class=" dropdown-toggle  dropdown-toggle-dash"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  Services
   </button>
   <div class="dropdown-menu p-4" aria-labelledby="dropdownMenuButton">
-  <a class="collapse-item pt-4" style="list-style:none; color:black; text-decoration:none " href="{{route('question.create')}}">create question</a> <br>
-      <a class="collapse-item pt-8" style="list-style:none; color:black;text-decoration:none "  href="{{route('question.index')}}">edit or delete question</a>
+  <a class="collapse-item pt-4" style="list-style:none; color:black; text-decoration:none " href="{{route('services.create')}}">create Services</a> <br>
+      <a class="collapse-item pt-8" style="list-style:none; color:black;text-decoration:none "  href="{{route('services.index')}}">edit or delete Services</a>
   </div>
 </div>
 </li>

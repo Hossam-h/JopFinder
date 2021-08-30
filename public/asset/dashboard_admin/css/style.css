@@ -2,7 +2,15 @@
     color:rgba(255,255,255,.3)
 }
 
-.dash_admin:hover .fa-question{
+.dash_admin{
+    margin-top: 20px;
+}
+li:nth-of-type(1).dropdown-toggle::after{
+    margin-left: 50% !important;
+}
+
+
+.dash_admin:hover i{
     color:rgba(255, 255, 255, 0.952)
 }
 
@@ -19,4 +27,7 @@
 li .fa-user{
     font-size: 30px;
     color: red;
+}
+.dropdown-toggle:focus{
+outline: none;
 }

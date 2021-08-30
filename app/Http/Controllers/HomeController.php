@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Home;
 use App\Models\Jop;
 use App\Models\Categore;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -20,7 +21,8 @@ class HomeController extends Controller
         $data=Jop::orderBy('id','desc')->take(5)->get();
         $categores=Categore::all();
         
-        return view('pages.index',['jops'=>$data , 'categores'=>$categores]);
+        $all_service=Service::all();
+        return view('pages.index',['jops'=>$data , 'categores'=>$categores, 'all_service'=>$all_service]);
     }
 
     /**

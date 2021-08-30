@@ -13,6 +13,7 @@ use \App\Http\Controllers\AdmindashController;
 use \App\Http\Controllers\QuestionController;
 use \App\Http\Controllers\Cruduser;
 use \App\Http\Controllers\LiveSearch;
+use \App\Http\Controllers\ServiceController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -84,7 +85,8 @@ Route::resource('/question',QuestionController::class);
 
 //-----------------------
 Route::get('search',[HomeController::class,'search'])->name('search');
-
 Route::get('/live_search', [LiveSearch::class,'index']);
 Route::get('/live_search/action', [LiveSearch::class,'action'])->name('live_search.action');
 
+//services
+Route::resource('/services',ServiceController::class);
