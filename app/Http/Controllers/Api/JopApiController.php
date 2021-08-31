@@ -43,6 +43,7 @@ class JopApiController extends Controller
     public function destroy($id){
         $delete=Jop::find($id);
 
+
         if($delete){
             $delete->delete();
         }
