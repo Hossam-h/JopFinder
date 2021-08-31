@@ -12,9 +12,8 @@ class ApplyController extends Controller
     public function apply_person(){
         
         $apply_person=User::find(Auth::user()->id);
-
+         
         $applies_person=$apply_person->jops;
-
         return view('applies.applies_person',['applies'=>$applies_person]);
     }
 
@@ -48,5 +47,15 @@ class ApplyController extends Controller
 return redirect()->route('show_apply',['id'=>$jop_id->id]);
 
 
+    }
+
+
+    public function delete_applyFrom_person($id){
+        
+        $user=User::find(Auth::user()->id);
+
+        //dd($id,$user->id);
+        $user->jops()->wherePivot('jop_id',$id)->detach();
+        return redirect()->route('apply_person');
     }
 }

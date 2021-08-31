@@ -27,7 +27,7 @@
                                 
                             
                                 <td>
-                                <form action="" method="post">
+                                <form action="{{route('delete_apply',['id'=>$apply->id])}}" method="post">
                               @csrf
                                {{method_field('delete')}}
                              <button type="submit" class="btn btn-danger"> Delete</button>

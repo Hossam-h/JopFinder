@@ -41,8 +41,8 @@ Route::get('/connact',[ConnactController::class,'index'])->name('connact-us');
 Route::post('/strore',[ConnactController::class,'store'])->name('store-message');
 
 //route of jop
-Route::get('/showall',[JopController::class,'showall_jop'])->name('showall');
-Route::get('/jop_detail/{id}',[JopController::class,'details'])->name('jop_detail');
+Route::get('/showall',[JopController::class,'showall_jop'])->middleware('auth')->name('showall');
+Route::get('/jop_detail/{id}',[JopController::class,'details'])->middleware('auth')->name('jop_detail');
 Route::get('/addjop',[JopController::class,'index'])->name('add');
 Route::post('/store_jop',[JopController::class,'store'])->name('store_jop');
 Route::get('/show_relation/{id}',[JopController::class,'show'])->name('show_relation');
@@ -58,7 +58,7 @@ Route::delete('/delete_profile/{id}',[ProfileController::class,'destroy'])->name
 //category routes
 Route::get('/add_category',[CategoreController::class,'create'])->name('create_category');
 Route::post('/store_category',[CategoreController::class,'store'])->name('store_category');
-Route::get('/show_category/{id}',[CategoreController::class,'show'])->name('show_category')->where(['id'=>'[0-9]+']);
+Route::get('/show_category/{id}',[CategoreController::class,'show'])->middleware('auth')->name('show_category')->where(['id'=>'[0-9]+']);
 Route::delete('/delete_category/{id}',[CategoreController::class,'destroy'])->where(['id'=>'[0-9]+'])->name('destroy_category');
 Route::get('/edit_category/{id}',[CategoreController::class,'edit'])->name('edit_category')->where(['id'=>'[0-9]+']);
 Route::post('/update_category/{id}',[CategoreController::class,'update'])->name('update_category');
@@ -72,7 +72,7 @@ Route::get('applies',[ApplyController::class,'apply_person'])->name('apply_perso
 Route::get('applies_comapny',[ApplyController::class,'apply_company'])->name('apply_comapny');
 Route::get('applies_comapny/{id}',[ApplyController::class,'show_applies'])->name('show_apply');
 Route::delete('delete_relation/{id}',[ApplyController::class,'delete_relation'])->name('delete_relation');
-
+Route::delete('/delete_jop_apply/{id}',[ApplyController::class,'delete_applyFrom_person'])->name('delete_apply');
 //users
 Route::resource('show_all_user',Cruduser::class);
 

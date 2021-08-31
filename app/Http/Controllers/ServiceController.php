@@ -47,7 +47,7 @@ class ServiceController extends Controller
         if($data){
             Service::create($data);
         }
-        
+        return \redirect()->route('services.index');
         
     }
 
@@ -72,6 +72,7 @@ class ServiceController extends Controller
     {
         $edit=Service::find($id);
         return view('services.edit',['edit'=>$edit]);
+        return \redirect()->route('services.index');
     }
 
     /**
@@ -96,7 +97,7 @@ class ServiceController extends Controller
         if($data){
             $update->update($data);
         } 
-
+        return \redirect()->route('services.index');
     }
 
     /**
@@ -109,6 +110,7 @@ class ServiceController extends Controller
      public function destroy($id)
     {
         Service::destroy($id);
+        return \redirect()->route('services.index');
     }
 
 }
