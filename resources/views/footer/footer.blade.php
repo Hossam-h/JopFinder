@@ -162,22 +162,76 @@
 
       // Bias the autocomplete object to the user's geographical location,
       // as supplied by the browser's 'navigator.geolocation' object.
-      function geolocate() {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var geolocation = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-            var circle = new google.maps.Circle({
-              center: geolocation,
-              radius: position.coords.accuracy
-            });
-            autocomplete.setBounds(circle.getBounds());
-          });
-        }
-      }
+      // function geolocate() {
+      //   if (navigator.geolocation) {
+      //     navigator.geolocation.getCurrentPosition(function(position) {
+      //       var geolocation = {
+      //         lat: position.coords.latitude,
+      //         lng: position.coords.longitude
+      //       };
+      //       var circle = new google.maps.Circle({
+      //         center: geolocation,
+      //         radius: position.coords.accuracy
+      //       });
+      //       autocomplete.setBounds(circle.getBounds());
+      //     });
+      //   }
+      // }
     </script>
+
+<script>
+     
+    
+     $('#city_name').on('keyup',function(){
+              let value=$(this).val();
+             
+                $.ajax({
+                    url : "{{url('live_search/action')}}",
+                    method : 'get',
+                    data:{query:value},
+                    dataType:'json',
+                    success:function(data){
+                      console.log(data.total_data)
+                      for(let i=0 ;i<data.total_data; i++){
+                        $('tbody').html(data.table_data);
+                        console.log(data.table_data);
+                      }  
+                        
+                        
+                     $('#total_records').text(data.total_data);
+
+                    }
+                });
+            });
+            //-----------------------------------------------------------
+            $('#jop_name').on('keyup',function(){
+              let value=$(this).val();
+             
+                $.ajax({
+                    url : "{{url('/live_search/action_jop')}}",
+                    method :'get',
+                    data:{query:value},
+                    dataType:'json',
+                    success:function(data){
+                      console.log(data.total_data)
+                      for(let i=0 ;i<data.total_data; i++){
+                        $('tbody').html(data.table_data);
+                        
+                      }  
+                        
+                        
+                     $('#total_records').text(data.total_data);
+
+                    }
+                });
+            });
+
+    
+
+
+ </script>
+    
+
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&libraries=places&callback=initAutocomplete"
         async defer></script>

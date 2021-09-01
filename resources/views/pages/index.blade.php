@@ -10,12 +10,12 @@
                 <div class="col-md-9">
                   <div class="row">
                     <div class="col-md-6 mb-3 mb-md-0">
-                      <input type="text" name="jop_name" class="mr-3 form-control border-0 px-4" placeholder="job title">
+                      <input type="text" id="jop_name" name="jop_name" class="mr-3 form-control border-0 px-4" placeholder="job title">
                     </div>
                     <div class="col-md-6 mb-3 mb-md-0">
                       <div class="input-wrap">
                         <span class="icon icon-room"></span>
-                      <input type="text" id="city_name" name="city" class="form-control form-control-block search-input  border-0 px-4"  placeholder="city">
+                      <input type="text" id="city_name" name="city" class="form-control  form-control-block search-input  border-0 px-4"  placeholder="city">
                       </div>
                     </div>
                   </div>
@@ -32,7 +32,26 @@
       </div>
     </div>
     <div class="col-md-6 mb-3 mb-md-0" id='result'></div> 
+<!-- start table search-->
 
+
+<div class="table-responsive">
+      <h3 class="text-center">Total Data : <span id="total_records"></span></h3>
+      <table class="table table-striped table-bordered">
+       <thead>
+        <tr>
+         <th>city</th>
+         <th>jop</th>
+         <th>company</th>
+        </tr>
+       </thead>
+       <tbody>
+
+       </tbody>
+      </table>
+     </div>
+    
+<!-- end table search-->
     <div class="site-section">
       <div class="container">
         <div class="row">
@@ -244,6 +263,7 @@
 
     
     
+
     @include('footer.footer')
 
    

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Jop;
 use App\Http\Resources\ApiResource;
+use Illuminate\Support\facades\Validator;
 class JopApiController extends Controller
 {
     public function index(){
@@ -29,7 +30,9 @@ class JopApiController extends Controller
                 'salary'=>'required',
                 'company_name'=>'required|string',
                 'description'=>'required',
-                'location'=>'required'
+                'location'=>'required',
+                'description'=>'required',
+                'category_id'=>'required'
             ]);
         if($validate->fails()){
             return response()->json($validate->errors());
@@ -40,9 +43,30 @@ class JopApiController extends Controller
     }
 
 
+    public function store(Request $request){
+
+            $validate= Validator::make($request->all(),[
+                'jop_name'=>'required|string',
+                'salary'=>'required',
+                'company_name'=>'required|string',
+                'jop_description'=>'required',
+                'location'=>'required',
+                
+            ]);
+        if($validate->fails()){
+            return response()->json($validate->errors());
+        }
+
+        Jop::create($request->all());
+        return \response()->json('ok');
+    }
+
+
+    
+
+
     public function destroy($id){
         $delete=Jop::find($id);
-
 
         if($delete){
             $delete->delete();
