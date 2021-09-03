@@ -46,6 +46,10 @@ Route::get('/jop_detail/{id}',[JopController::class,'details'])->middleware('aut
 Route::get('/addjop',[JopController::class,'index'])->name('add');
 Route::post('/store_jop',[JopController::class,'store'])->name('store_jop');
 Route::get('/show_relation/{id}',[JopController::class,'show'])->name('show_relation');
+Route::get('/show_myJops',[JopController::class,'showMy_jops'])->name('jop.showMy_jops');
+Route::delete('/jop_delete/{id}',[JopController::class,'destroy'])->name('jop.destroy');
+Route::get('/jop_edit/{id}',[JopController::class,'edit'])->name('jop.edit');
+Route::PUT('/jop_update/{id}',[JopController::class,'update'])->name('jop.update');
 
 //create profile
 Route::get('/create_profile',[ProfileController::class,'create'])->name('create_profile');

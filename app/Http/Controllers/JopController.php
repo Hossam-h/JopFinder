@@ -86,7 +86,10 @@ class JopController extends Controller
         
         
     }
-
+public function edit($id){
+$edit_jop=Jop::find($id);
+return view('jops.edit',['edit'=>$edit_jop]);
+}
     /**
      * Display the specified resource.
      *
@@ -95,17 +98,7 @@ class JopController extends Controller
      */
     public function details($id)
     {
-        // dd(
-        //      $id_user=Auth::user()->id,
-        //     $user = User::where('id', '=', $id_user)
-        // ->first()->name
-        //     // Auth::user()->name,
-        //     // Auth::user()->id,
-        //     // Jop::find($id)->id
-        // );
         $detailjop=Jop::find($id);
-        
-
         return view('pages.jop_single',['jop_detail'=>$detailjop]);
     }
 
@@ -115,9 +108,14 @@ class JopController extends Controller
      * @param  \App\Models\Jop  $jop
      * @return \Illuminate\Http\Response
      */
-    public function edit(Jop $jop)
+    public function showMy_jops()
     {
-        //
+        
+        $apply_comapny=Jop::where('company_name',Auth::user()->name)->get();
+        if($apply_comapny){
+            return view('jops.show_jops',['jops'=>$apply_comapny]);
+
+        }
     }
 
     /**
@@ -127,9 +125,22 @@ class JopController extends Controller
      * @param  \App\Models\Jop  $jop
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Jop $jop)
+    public function update(Request $request, $id)
     {
-        //
+        
+        $jop_update=Jop::find($id);
+        $request->validate([
+            'jop_name'=>'required',
+            'salary'=>'required',
+            'location'=>'required',
+        
+            'jop_description'=>'required'
+         ]);
+
+         $data=$request->except(['_token']);
+         $jop_update->update($data);
+        return redirect()->route('jop.showMy_jops');  
+      
     }
 
     /**
@@ -138,8 +149,10 @@ class JopController extends Controller
      * @param  \App\Models\Jop  $jop
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Jop $jop)
+    public function destroy($id)
     {
-        //
+        
+      Jop::destroy($id);
+      return redirect()->route('jop.showMy_jops'); 
     }
 }

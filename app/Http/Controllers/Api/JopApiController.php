@@ -31,7 +31,6 @@ class JopApiController extends Controller
                 'company_name'=>'required|string',
                 'description'=>'required',
                 'location'=>'required',
-                'description'=>'required',
                 'categore_id'=>'required'
             ]);
         if($validate->fails()){

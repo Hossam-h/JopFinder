@@ -24,5 +24,5 @@ use \App\Http\Controllers\Api\JopApiController;
 Route::get('/jop',[JopApiController::class,'index']); 
 Route::get('/jop/show/{id}',[JopApiController::class,'show']); 
 Route::post('/jop/store',[JopApiController::class,'store']); 
-Route::post('/jop/update',[JopApiController::class,'update']); 
-Route::post('/jop/delete',[JopApiController::class,'destroy']); 
+Route::post('/jop/update/{id}',[JopApiController::class,'update']); 
+Route::post('/jop/delete/{id}',[JopApiController::class,'destroy']); 

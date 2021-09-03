@@ -263,7 +263,8 @@ a {
       display: inline-block; }
     .site-navbar .site-navigation .site-menu > li {
       display: inline-block;
-      padding: 10px 5px; }
+    
+     }
       .site-navbar .site-navigation .site-menu > li > a {
         padding: 10px 10px;
         

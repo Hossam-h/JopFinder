@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="{{asset('asset/fonts/icomoon/style.css')}}">
 
     <link rel="stylesheet" href="{{asset('asset/css/bootstrap.min.css')}}">
-    
+    <link rel="shortcut icon" href="https://thrivesearch.com/wp-content/uploads/2018/07/job-search.jpg" type="image/x-icon">  
+
     <link rel="stylesheet" href="{{asset('asset/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('asset/css/magnific-popup.css')}}">
     <link rel="stylesheet" href="{{asset('asset/css/jquery-ui.css')}}">
@@ -53,10 +54,10 @@
     <div class="site-navbar bg-light">
       
         <div class="row align-items-center">
-          <div class="col-2">
+          <div class="col-1">
             <h2 class="mb-0 site-logo"><a href="index.html">Job<strong class="font-weight-bold">Finder</strong> </a></h2>
           </div>
-          <div class="col-10">
+          <div class="col-11">
             <nav class="site-navigation text-right" role="navigation">
               <div class="container">
                 <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
