@@ -86,6 +86,13 @@
 
                       @auth()
                       @if(auth()->user()->email_type=='Company')
+                      <li><a href="{{route('jop.showMy_jops')}}">Control my jop</a></li>
+                      @endif 
+                      @endauth()
+
+
+                      @auth()
+                      @if(auth()->user()->email_type=='Company')
                       <li><a href="{{route('apply_comapny')}}">My post jop</a></li>
                       @endif 
                       @endauth()

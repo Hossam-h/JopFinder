@@ -8,6 +8,7 @@
                                 <th>name</th>
                                 <th>salary</th>
                                 <th>location</th>
+                                <th>category</th>
                                 <th>description</th>                        
                                 <th>Edit</th>
                                 <th>Delete</th>
@@ -20,7 +21,9 @@
                                 <td>{{$jop->jop_name}}</td>
                                 <td>{{$jop->salary}}</td>
                                 <td>{{$jop->location}}</td>
+                                <td>{{$categroy_name->category}}</td>
                                 <td>{{$jop->jop_description}}</td>
+                               
                     
                                 <td><a href="{{route('jop.edit',['id'=> $jop->id])}}" class="btn btn-warning">Edit</a></td>
                                 <td>

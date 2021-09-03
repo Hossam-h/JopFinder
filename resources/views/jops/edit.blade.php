@@ -37,6 +37,21 @@
             <span class="alert alert-danger">{{$message}}</span>
             @enderror
 
+            <div class="row form-group">
+                <div class="col-md-12"><h3>Select category</h3></div>
+                <div class="col-md-12 mb-3 mb-md-0">
+                 <select name="categore_id" class="form-control" id="">
+                @foreach($all_category as $category)
+                 <option value="{{$category->id}}">{{$category->category}}</option>
+                 @endforeach
+                 </select>
+                </div>
+              </div>
+
+              @error('location')
+            <span class="alert alert-danger">{{$message}}</span>
+            @enderror
+
           
             <div class="row form-group">
                 <div class="col-md-12"><h3>description</h3></div>

@@ -88,7 +88,13 @@ class JopController extends Controller
     }
 public function edit($id){
 $edit_jop=Jop::find($id);
-return view('jops.edit',['edit'=>$edit_jop]);
+$all_category=Categore::all();
+return view('jops.edit',
+[
+    'edit'=>$edit_jop,
+    'all_category'=>$all_category
+]);
+
 }
     /**
      * Display the specified resource.
@@ -112,8 +118,18 @@ return view('jops.edit',['edit'=>$edit_jop]);
     {
         
         $apply_comapny=Jop::where('company_name',Auth::user()->name)->get();
+        $categroy_name;
+     foreach ($apply_comapny as $jop){
+        $categroy_name=Categore::where('id',$jop->categore_id)->first();
+        
+     }
+
         if($apply_comapny){
-            return view('jops.show_jops',['jops'=>$apply_comapny]);
+            return view('jops.show_jops',
+            [
+                'jops'=>$apply_comapny ,
+                'categroy_name'=>$categroy_name
+            ]);
 
         }
     }
