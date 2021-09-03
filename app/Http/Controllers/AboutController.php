@@ -20,7 +20,12 @@ class AboutController extends Controller
 
         $all_team=Team::all();
         $all_ques=Question::all();
-        return view('pages.about',['all_team'=>$all_team ,'about_us'=>$about_us,'all_ques'=>$all_ques]);
+    
+        return view('pages.about',[
+        'all_team'=>$all_team ,
+        'about_us'=>$about_us,
+        'all_question'=>$all_ques
+    ]);
 
     }
 
@@ -112,10 +117,7 @@ class AboutController extends Controller
             
             }
            
-        $about_us=About::first();
-        $all_team=Team::all();
-        return view('pages.about',['all_team'=>$all_team ,'about_us'=>$row]);
-
+       return \redirect()->route('index_about');
     }
 
     /**

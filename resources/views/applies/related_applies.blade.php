@@ -10,8 +10,7 @@
                                 <th>id</th>
                                 <th>name</th>
                                 <th>jop</th>
-                                <th>image</th>                        
-                                <th>Edit</th>
+                                                       
                                 <th>Delete</th>
                             </tr>
                         </thead>

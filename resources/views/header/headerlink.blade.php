@@ -65,16 +65,20 @@
                 <li><a href="{{route('index')}}">Home</a></li>
               
                   <li><a href="{{route('index_about')}}">About Us</a></li>
+                  @auth()
                   <li class="has-children">
+                   
                     <a href="#">For Employees</a>
                     <ul class="dropdown arrow-top">
-                      <li><a href="category.html">Category</a></li>
-                      <li><a href="{{route('create_category')}}">Add category</a></li>
-                      <li><a href="{{route('dash')}}">Admin_dasboard</a></li>
                      
-                      @auth()
-                      @if(auth()->user()->email_type=='Personal')
-
+                    @auth()
+                     @if(auth()->user()->name == 'Admin')
+                      <li><a href="{{route('dash')}}">Admin_dasboard</a></li>
+                     @endif()
+                     @endauth()
+                      
+                     @auth()
+                      @if(auth()->user()->email_type=='Personal' && !auth()->user()->name=='Admin')
                       <li><a href="{{route('apply_person')}}">applies of empolyee</a></li>
                       @endif 
                       @endauth()
@@ -92,7 +96,9 @@
 
                     </ul>
                   </li>
-                  <li><a href="{{route('connact-us')}}">Contact</a></li>
+                  @endauth()
+                  <li>
+                    <a href="{{route('connact-us')}}">Contact</a></li>
                   
                   @auth()
                   <li class="nav-item">
@@ -110,6 +116,12 @@
                  
                   @auth()
                   @if(auth()->user()->email_type == 'Company')
+                  <li><a href="{{url('addjop')}}"><span class="bg-primary text-white py-3 px-4 rounded"><span class="icon-plus mr-3"></span>Post New Job</span></a></li>
+                  @endif
+                  @endauth
+
+                  @auth()
+                  @if(auth()->user()->name == 'Admin')
                   <li><a href="{{url('addjop')}}"><span class="bg-primary text-white py-3 px-4 rounded"><span class="icon-plus mr-3"></span>Post New Job</span></a></li>
                   @endif
                   @endauth

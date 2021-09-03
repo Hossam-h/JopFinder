@@ -63,7 +63,7 @@ class CategoreController extends Controller
     {
         $show_category=Categore::find($id);
         $cat_id=$show_category->id;
-        $Show_jop_category=Jop::where('category_id',$cat_id)->get();
+        $Show_jop_category=Jop::where('categore_id',$cat_id)->get();
         return view ('category.show_category',['show_jops'=>$Show_jop_category,'id_cat'=>$cat_id]);
            
     }

@@ -56,9 +56,9 @@
           @foreach( $all_team as $team)
           <div class="col-lg-2 col-md-4 col-sm-6 col-12" data-aos="fade" data-aos-delay="300">
             <a href="#" class="person">
-              <img src="{{asset('images/team') .'/'. $team->image}}" height="200px" alt="Image placeholder">
+              <img src="{{asset('images/team') .'/'. $team->image}}" height="180px" alt="Image placeholder">
               <h2>{{$team->name}}</h2>
-              <p>{{$team->jop}}</p>
+              <p class="text-dark">{{$team->jop}}</p>
             </a>
           </div>
         @endforeach
@@ -85,7 +85,7 @@
             
            
             <div class="accordion unit-8" id="accordion">
-            @foreach($all_ques as $quey)
+            @foreach($all_question as $quey)
             <div class="accordion-item">
               <h3 class="mb-0 heading">
                 <a class="btn-block" data-toggle="collapse" 

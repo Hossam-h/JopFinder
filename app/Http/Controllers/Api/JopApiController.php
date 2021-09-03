@@ -32,7 +32,7 @@ class JopApiController extends Controller
                 'description'=>'required',
                 'location'=>'required',
                 'description'=>'required',
-                'category_id'=>'required'
+                'categore_id'=>'required'
             ]);
         if($validate->fails()){
             return response()->json($validate->errors());

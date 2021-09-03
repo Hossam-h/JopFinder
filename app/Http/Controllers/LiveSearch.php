@@ -60,8 +60,7 @@ class LiveSearch extends Controller
       );
      
       echo json_encode($data);
-      $v=10;
-      return view('pages.index',['ajax'=>$v]);
+    
      }
 
      

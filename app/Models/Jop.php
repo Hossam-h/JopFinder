@@ -9,10 +9,10 @@ class Jop extends Model
 {
     use HasFactory;
 
-    protected $fillable=['jop_name','salary','location','company_name','jop_description','category_id'];
+    protected $fillable=['jop_name','salary','location','company_name','jop_description','categore_id'];
 
     public function category(){
-        return $this->belongsTo(Categore::class);
+        return $this->belongsTo(Categore::class,'categore_id','id');
     }
     
     public function users(){

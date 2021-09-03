@@ -21,6 +21,22 @@ class HomeController extends Controller
         $data=Jop::orderBy('id','desc')->take(5)->get();
         $categores=Categore::all();
         
+
+        $num;
+        $num2;
+        foreach($categores as $cat){
+            $num = $cat->id;       
+             
+             
+            
+        }
+        $num2=Categore::find(1);
+   // dd($num2->jops);
+    // $num_jop=null;
+    //     $num_jop.=Jop::where('category_id',$num)->get();
+
+    //     //dd($num_jop);
+    //      dd($num_jop->count());      
         $all_service=Service::all();
         return view('pages.index',['jops'=>$data , 'categores'=>$categores, 'all_service'=>$all_service]);
     }

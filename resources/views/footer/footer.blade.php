@@ -194,7 +194,7 @@
                       console.log(data.total_data)
                       for(let i=0 ;i<data.total_data; i++){
                         $('tbody').html(data.table_data);
-                        console.log(data.table_data);
+                      
                       }  
                         
                         

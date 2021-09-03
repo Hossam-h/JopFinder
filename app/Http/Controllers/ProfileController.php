@@ -15,6 +15,8 @@ class ProfileController extends Controller
      */
     public function index()
     {
+       // Profile::find(1)->user;
+    
        $my_profile=Profile::where('user_id', Auth::user()->id)->first();
 
 
@@ -123,7 +125,7 @@ class ProfileController extends Controller
         $image->move('images\team',$image_name);
 
         if($update_profile->$image){
-            unlink('images/team'.$row->image);
+            unlink('images/team'.$update_profile->image);
           
           }
         $data['image']=$image_name;

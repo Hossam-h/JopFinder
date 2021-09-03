@@ -6,7 +6,7 @@
               <div class="row form-group">
                 <div class="col-md-12"><h3>Edit Question </h3></div>
                 <div class="col-md-12 mb-3 mb-md-0">
-                 <input type="text" name="question" value="{{$edit->question}}" placeholder='add qusetion'>
+                 <input type="text" name="question" class="form-control" value="{{$edit->question}}" placeholder='add qusetion'>
                 </div>
               </div>
 

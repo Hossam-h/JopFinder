@@ -67,7 +67,7 @@
             <!--status -->
   <div class="form-group">
     <label for="exampleFormControlSelect1">Status</label>
-    <select class="form-control" name='category_id' id="exampleFormControlSelect1">
+    <select class="form-control" name='categore_id' id="exampleFormControlSelect1">
     @foreach( $categories as $category)
       <option value="{{$category->id}}">{{$category->category}}</option>
       @endforeach
