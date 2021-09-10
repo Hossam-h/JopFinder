@@ -2,8 +2,8 @@
   
     <div class="unit-5 overlay" style="background-image: url('../asset/images/hero_1.jpg');">
       <div class="container text-center">
-        <h2 class="mb-0">About Us</h2>
-        <p class="mb-0 unit-6"><a href="index.html">Home</a> <span class="sep">></span> <span>About Us</span></p>
+        <h2 class="mb-0">{{__('header.About')}}</h2>
+        
       </div>
     </div>
 
@@ -26,7 +26,7 @@
           </div>
           <div class="col-md-5 ml-auto">
             <div class="text-left mb-5 section-heading">
-              <h2>About Us</h2>
+              <h2>{{__('header.About')}}</h2>
             </div>
 
             <p class="mb-4 h5 font-italic lineheight1-5">&ldquo;
@@ -46,7 +46,7 @@
         <div class="row justify-content-center mb-5">
           <!-- <div class="col-md-7 text-center"> -->
             <div class="col-md-6 mx-auto text-center mb-5 section-heading">
-              <h2 class="mb-5">The Team</h2>
+              <h2 class="mb-5">{{__('home.team')}}</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum magnam illum maiores adipisci pariatur, eveniet.</p>
             </div>
             

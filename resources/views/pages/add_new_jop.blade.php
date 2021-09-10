@@ -2,8 +2,8 @@
 
     <div class="unit-5 overlay" style="background-image: url('../asset/images/hero_1.jpg');">
       <div class="container text-center">
-        <h2 class="mb-0">Post a Job</h2>
-        <p class="mb-0 unit-6"><a href="index.html">Home</a> <span class="sep">></span> <span>Post a Job</span></p>
+        <h2 class="mb-0">{{__('jop.post_job')}}</h2>
+        
       </div>
     </div>
 
@@ -20,6 +20,13 @@
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label class="font-weight-bold" for="fullname">Job Title</label>
                   <input type="text" name="jop_name" id="fullname" class="form-control" placeholder="eg. Full Stack Frontend">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label class="font-weight-bold" for="fullname">موضوع الوظيفه</label>
+                  <input type="text" name="jop_name_ar" id="fullname" class="form-control" placeholder="eg. Full Stack Frontend">
                 </div>
               </div>
            
@@ -64,9 +71,22 @@
             <span class="alert alert-danger">{{$message}}</span>
             @enderror
 
+
+            <div class="row form-group mb-4">
+                <div class="col-md-12"><h3>الموقع</h3></div>
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <input type="text" name="location_ar" class="form-control" placeholder="">
+                </div>
+              </div>
+              @error('location')
+            <span class="alert alert-danger">{{$message}}</span>
+            @enderror
+
+
+
             <!--status -->
   <div class="form-group">
-    <label for="exampleFormControlSelect1">Status</label>
+    <label for="exampleFormControlSelect1">Category</label>
     <select class="form-control" name='categore_id' id="exampleFormControlSelect1">
     @foreach( $categories as $category)
       <option value="{{$category->id}}">{{$category->category}}</option>
@@ -87,6 +107,19 @@
             <span class="alert alert-danger">{{$message}}</span>
             @enderror
 
+
+
+            <div class="row form-group">
+                <div class="col-md-12"><h3>وصف الوظيفه</h3></div>
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <textarea name="jop_description_ar" class="form-control" id="" cols="30" rows="5"></textarea>
+                </div>
+              </div>
+              @error('jop_description')
+            <span class="alert alert-danger">{{$message}}</span>
+            @enderror
+
+            
               <div class="row form-group">
                 <div class="col-md-12">
                   <input type="submit" value="Post a Job" class="btn btn-primary  py-2 px-5">
@@ -97,26 +130,6 @@
             </form>
           </div>
 
-          <div class="col-lg-4">
-            <div class="p-4 mb-3 bg-white">
-              <h3 class="h5 text-black mb-3">Contact Info</h3>
-              <p class="mb-0 font-weight-bold">Address</p>
-              <p class="mb-4">203 Fake St. Mountain View, San Francisco, California, USA</p>
-
-              <p class="mb-0 font-weight-bold">Phone</p>
-              <p class="mb-4"><a href="#">+1 232 3235 324</a></p>
-
-              <p class="mb-0 font-weight-bold">Email Address</p>
-              <p class="mb-0"><a href="#">youremail@domain.com</a></p>
-
-            </div>
-            
-            <div class="p-4 mb-3 bg-white">
-              <h3 class="h5 text-black mb-3">More Info</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ad iure porro mollitia architecto hic consequuntur. Distinctio nisi perferendis dolore, ipsa consectetur</p>
-              <p><a href="#" class="btn btn-primary  py-2 px-4">Learn More</a></p>
-            </div>
-          </div>
         </div>
       </div>
     </div>

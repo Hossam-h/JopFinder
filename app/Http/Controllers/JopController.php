@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Jop;
 use App\Models\User;
 use App\Models\Categore;
+use App\Http\Requests\JopRequest;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -69,19 +70,23 @@ class JopController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(JopRequest $request)
     {
-         
-         $request->validate([
-            'jop_name'=>'required',
-            'salary'=>'required',
-            'location'=>'required',
-            'company_name'=>'required',
-            'jop_description'=>'required'
-         ]);
+    
+        $validate=$request->validated();
+        
+        
+         //$data=$request->except(['_token']);
+        //Jop::create($data);
+      Jop::create(  [
+          'jop_name'=>['en'=>$request->jop_name,'ar'=>$request->jop_name_ar],
+          'salary'=>$request->salary,
+          'location'=>['en'=>$request->location,'ar'=>$request->location_ar],
+          'company_name'=>$request->company_name,
+          'jop_description'=>['en'=>$request->jop_description,'ar'=>$request->jop_description_ar],
+          'categore_id'=>$request->categore_id
+        ]);
 
-         $data=$request->except(['_token']);
-        Jop::create($data);
         return redirect()->route('index');  
         
         

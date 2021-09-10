@@ -63,13 +63,30 @@
                 <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
                 <ul class="site-menu js-clone-nav d-none d-lg-block">
-                <li><a href="{{route('index')}}">Home</a></li>
-              
-                  <li><a href="{{route('index_about')}}">About Us</a></li>
+               
+                <li class=>
+                <ul class="dropdown arrow-top">
+
+                  
+                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+        <li>
+            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                {{ $properties['native'] }}
+            </a>      
+            </li>      
+                @endforeach
+                </ul>
+              </li>
+               
+                <li><a href="{{route('index')}}">{{__('header.Home')}}</a></li>
+               
+
+                  <li><a href="{{route('index_about')}}">{{__('header.About')}}</a></li>
                   @auth()
+                  
                   <li class="has-children">
-                   
-                    <a href="#">For Employees</a>
+
+                    <a href="#">{{__('header.employee')}}</a>
                     <ul class="dropdown arrow-top">
                      
                     @auth()
@@ -79,60 +96,57 @@
                      @endauth()
                       
                      @auth()
-                      @if(auth()->user()->email_type=='Personal' && !auth()->user()->name=='Admin')
+                      @if(auth()->user()->email_type=='Personal')
                       <li><a href="{{route('apply_person')}}">applies of empolyee</a></li>
                       @endif 
                       @endauth()
 
                       @auth()
                       @if(auth()->user()->email_type=='Company')
-                      <li><a href="{{route('jop.showMy_jops')}}">Control my jop</a></li>
+                      <li><a href="{{route('jop.showMy_jops')}}">{{__('header.control')}}</a></li>
                       @endif 
                       @endauth()
 
 
                       @auth()
                       @if(auth()->user()->email_type=='Company')
-                      <li><a href="{{route('apply_comapny')}}">My post jop</a></li>
+                      <li><a href="{{route('apply_comapny')}}">{{__('header.myPost')}}</a></li>
                       @endif 
                       @endauth()
+                     
                       
+
                       @auth()
-                      <li><a href="{{route('profile')}}">Profile</a></li>
-                      <li class=""><a href="{{route('create_profile')}}"> Create profile</a> </li>
+                      <li><a href="{{route('profile')}}">{{__('header.profile')}}</a></li>
+                      <li class=""><a href="{{route('create_profile')}}"> {{__('header.create_profile')}}</a> </li>
                        @endauth()
 
                     </ul>
                   </li>
                   @endauth()
                   <li>
-                    <a href="{{route('connact-us')}}">Contact</a></li>
+                    <a href="{{route('connact-us')}}">{{__('header.connact')}}</a></li>
                   
                   @auth()
                   <li class="nav-item">
                     <form action="{{url('logout')}}" method="post">
                       @csrf
-                   <input type="submit" value="logout" class="btn btn-primary"> 
+                   <input type="submit" value="{{__('header.logout')}}" class="btn btn-primary"> 
                   </form>   
                   </li>                
                   @endauth
                   
                   @guest
-                  <li><a href="{{url('login')}}">login</a></li>
-                  <li><a href="{{url('register')}}">register</a></li>
+                  <li><a href="{{url('login')}}">{{__('header.login')}}</a></li>
+                  <li><a href="{{url('register')}}">{{__('header.register')}}</a></li>
                   @endguest
                  
-                  @auth()
-                  @if(auth()->user()->email_type == 'Company')
-                  <li><a href="{{url('addjop')}}"><span class="bg-primary text-white py-3 px-4 rounded"><span class="icon-plus mr-3"></span>Post New Job</span></a></li>
-                  @endif
-                  @endauth
-
-                  @auth()
-                  @if(auth()->user()->name == 'Admin')
-                  <li><a href="{{url('addjop')}}"><span class="bg-primary text-white py-3 px-4 rounded"><span class="icon-plus mr-3"></span>Post New Job</span></a></li>
-                  @endif
-                  @endauth
+               @auth()
+                      @if(auth()->user()->email_type=='Company')
+                      <li><a href="{{route('add')}}" class="btn btn-primary">{{__('header.post_jop')}}</a></li>
+                      @endif 
+                      @endauth()
+                     
 
 
                   @auth()    

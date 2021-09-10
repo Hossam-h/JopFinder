@@ -42,7 +42,11 @@ class CategoreController extends Controller
             
         ]);
         
-        Categore::create($request->except(['_token']));
+        Categore::create([
+            'category'=>['en'=>$request->category,'ar'=>$request->category_ar],
+            'icon'=>$request->category
+
+        ]);
 
         return redirect()->route('create_category');
     }

@@ -4,24 +4,24 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-12" data-aos="fade">
-            <h1>Find Job</h1>
+            <h1>{{__('home.find_jop')}}</h1>
             <form action="{{route('search')}}">
               <div class="row mb-3">
                 <div class="col-md-9">
                   <div class="row">
                     <div class="col-md-6 mb-3 mb-md-0">
-                      <input type="text" id="jop_name" name="jop_name" class="mr-3 form-control border-0 px-4" placeholder="job title">
+                      <input type="text" id="jop_name" name="jop_name" class="mr-3 form-control border-0 px-4" placeholder="{{__('home.jop')}}">
                     </div>
                     <div class="col-md-6 mb-3 mb-md-0">
                       <div class="input-wrap">
                         <span class="icon icon-room"></span>
-                      <input type="text" id="city_name" name="city" class="form-control  form-control-block search-input  border-0 px-4"  placeholder="city">
+                      <input type="text" id="city_name" name="city" class="form-control  form-control-block search-input  border-0 px-4"  placeholder="{{__('home.city')}}">
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-3">
-                  <input type="submit" class="btn btn-search btn-primary btn-block" value="Search">
+                  <input type="submit" class="btn btn-search btn-primary btn-block" value="{{__('home.search')}}">
                 </div>
               </div>
               
@@ -36,13 +36,13 @@
 
 
 <div class="table-responsive">
-      <h3 class="text-center">Total Data : <span id="total_records"></span></h3>
+      <h3 class="text-center">{{__('home.total_data')}} <span id="total_records"></span></h3>
       <table class="table table-striped table-bordered">
        <thead>
         <tr>
-         <th>city</th>
-         <th>jop</th>
-         <th>company</th>
+         <th>{{__('home.city')}}</th>
+         <th>{{__('home.jop')}}</th>
+         <th>{{__('home.company')}}</th>
         </tr>
        </thead>
        <tbody>
@@ -56,7 +56,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 mx-auto text-center mb-5 section-heading">
-            <h2 class="mb-5">Popular Categories</h2>
+            <h2 class="mb-5">{{__('home.popular_categories')}}</h2>
           </div>
         </div>
         <div class="row">
@@ -82,7 +82,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="100">
-            <h2 class="mb-5 h3">Recent Jobs</h2>
+            <h2 class="mb-5 h3">{{__('home.recent_jop')}}</h2>
             <div class="rounded border jobs-wrap">
 
                 @foreach($jops as $jop)
@@ -102,7 +102,7 @@
                 </div>
                 <div class="job-category align-self-center">
                   <div class="p-3">
-                    <span class="text-info p-2 rounded border border-info">Details</span>
+                    <span class="text-info p-2 rounded border border-info">{{__('jop.detail')}}</span>
                   </div>
                 </div>  
               </a>
@@ -113,12 +113,12 @@
 
             <div class="col-md-12 text-center mt-5">
               <a href="{{Route('showall')}}" class="btn btn-primary rounded py-3 px-5">
-                <span class="icon-plus-circle"></span> Show More Jobs</a>
+                <span class="icon-plus-circle"></span> {{__('home.more_jop')}}</a>
             </div>
           </div>
           <div class="col-md-4 block-16" data-aos="fade-up" data-aos-delay="200">
             <div class="d-flex mb-0">
-              <h2 class="mb-5 h3 mb-0">Featured Jobs</h2>
+              <h2 class="mb-5 h3 mb-0">{{__('home.feature_jop')}}</h2>
               <div class="ml-auto mt-1"><a href="#" class="owl-custom-prev">Prev</a> / <a href="#" class="owl-custom-next">Next</a></div>
             </div>
 
@@ -128,7 +128,7 @@
               @foreach($jops as $jop)
               <div class="border rounded p-4 bg-white">
                 <h2 class="h5">{{$jop->jop_name}} </h2>
-                <p><span class="border border-warning rounded p-1 px-2 text-warning">Freelance</span></p>
+                
                 <p>
                   <span class="d-block"><span class="icon-suitcase"></span>{{$jop->company_name}}</span>
                   <span class="d-block"><span class="icon-room"></span>{{$jop->location}}</span>
@@ -161,10 +161,10 @@
           </div>
           <div class="col-md-5 ml-auto">
             <div class="text-left mb-5 section-heading">
-              <h2>Testimonies</h2>
+              <h2>{{__('home.testimonies')}}</h2>
             </div>
 
-            <p class="mb-4 h5 font-italic lineheight1-5">&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nisi Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nobis magni eaque velit eum, id rem eveniet dolor possimus voluptas..&rdquo;</p>
+            <p class="mb-4 h5 font-italic lineheight1-5">{{__('home.body_testimonies')}}</p>
             <p>&mdash; <strong class="text-black font-weight-bold">John Holmes</strong>, Marketing Strategist</p>
             <p><a href="https://vimeo.com/28959265" class="popup-vimeo text-uppercase">Watch Video <span class="icon-arrow-right small"></span></a></p>
           </div>
@@ -177,9 +177,9 @@
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-6 text-center" data-aos="fade">
-            <h1 class="h3 mb-0">Your Dream Job</h1>
-            <p class="h3 text-white mb-5">Is Waiting For You</p>
-            <p><a href="{{route('showall')}}" class="btn btn-outline-warning py-3 px-4">Find Jobs</a> </p>
+            <h1 class="h3 mb-0">{{__('home.dream_jop')}}</h1>
+            <p class="h3 text-white mb-5">{{__('home.wait_you')}}</p>
+            <p><a href="{{route('showall')}}" class="btn btn-outline-warning py-3 px-4">{{__('home.find_jop')}}</a> </p>
             
           </div>
         </div>
@@ -192,7 +192,7 @@
       <div class="container">
         
         <div class="text-center mb-5 section-heading">
-          <h2>Our services</h2>
+          <h2>{{__('home.our_services')}}</h2>
         </div>
 
         <div class="row text-center  border-bottom">

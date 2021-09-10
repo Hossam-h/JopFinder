@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 use \App\Http\Controllers\ConnactController;
 use \App\Http\Controllers\JopController;
 use \App\Http\Controllers\HomeController;
@@ -24,7 +26,14 @@ use \App\Http\Controllers\ServiceController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath','auth' ]
+    ], function(){ //...
+    //---------------------------------
 
+    
 Route::get('/addjop',[JopController::class,'index'])->name('add');
 Route::post('/store_jop',[JopController::class,'store'])->name('store_jop');
 
@@ -80,7 +89,6 @@ Route::delete('/delete_jop_apply/{id}',[ApplyController::class,'delete_applyFrom
 //users
 Route::resource('show_all_user',Cruduser::class);
 
-
 //admin_dashboard
 Route::get('dash',[AdmindashController::class,'getall'])->name('dash');
 
@@ -95,3 +103,8 @@ Route::get('/live_search/action_jop', [LiveSearch::class,'action_jop'])->name('l
 
 //services
 Route::resource('/services',ServiceController::class);
+
+//-------------------------------------
+});
+    
+
