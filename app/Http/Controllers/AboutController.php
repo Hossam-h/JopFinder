@@ -48,7 +48,8 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+          
     }
 
     /**
@@ -93,11 +94,11 @@ class AboutController extends Controller
             if($row){
             $data=$request->except('_token','image');
 
-            $request->validate([
-                'about_us'=>'required|min:120',
+            // $request->validate([
+            //     'about_us'=>'required|min:120',
 
-                'image'=>'required'
-            ]);
+            //     'image'=>'required'
+            // ]);
 
             $image=$request->file('image');
         
@@ -112,7 +113,10 @@ class AboutController extends Controller
               
               }
     
-             $row->update($data); 
+             $row->update([
+                 'about_us'=>['en'=>$request->about_us,'ar'=>$request->about_us_ar],
+                 'image'=>$image_name
+             ]); 
 
             
             }

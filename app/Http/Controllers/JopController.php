@@ -159,7 +159,15 @@ return view('jops.edit',
          ]);
 
          $data=$request->except(['_token']);
-         $jop_update->update($data);
+
+         $jop_update->update([
+            'jop_name'=>['en'=>$request->jop_name,'ar'=>$request->jop_name_ar],
+            'salary'=>$request->salary,
+            'location'=>['en'=>$request->location,'ar'=>$request->location_ar],
+            'company_name'=>$request->company_name,
+            'jop_description'=>['en'=>$request->jop_description,'ar'=>$request->jop_description_ar],
+            'categore_id'=>$request->categore_id
+         ]);
         return redirect()->route('jop.showMy_jops');  
       
     }

@@ -64,9 +64,7 @@
 
                 <ul class="site-menu js-clone-nav d-none d-lg-block">
                
-                <li class=>
-                <ul class="dropdown arrow-top">
-
+                
                   
                 @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
         <li>
@@ -75,8 +73,6 @@
             </a>      
             </li>      
                 @endforeach
-                </ul>
-              </li>
                
                 <li><a href="{{route('index')}}">{{__('header.Home')}}</a></li>
                

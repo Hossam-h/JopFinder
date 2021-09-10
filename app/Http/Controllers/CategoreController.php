@@ -103,7 +103,11 @@ class CategoreController extends Controller
    
      $datas=$request->except(['_token']);
 
-     $ctaegory_update->update($datas);
+     $ctaegory_update->update([
+        'category'=>['en'=>$request->category,'ar'=>$request->category_ar],
+        'icon'=>$request->category
+
+     ]);
 
      return redirect()->route('all_category');
 
