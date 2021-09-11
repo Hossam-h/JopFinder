@@ -26,7 +26,7 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
     
-    
+   
     
     <link rel="stylesheet" href="{{asset('asset/fonts/flaticon/font/flaticon.css')}}">
   
@@ -87,13 +87,13 @@
                      
                     @auth()
                      @if(auth()->user()->name == 'Admin')
-                      <li><a href="{{route('dash')}}">Admin_dasboard</a></li>
+                      <li><a href="{{route('dash')}}">{{__('header.Admin_dash')}}</a></li>
                      @endif()
                      @endauth()
                       
                      @auth()
                       @if(auth()->user()->email_type=='Personal')
-                      <li><a href="{{route('apply_person')}}">applies of empolyee</a></li>
+                      <li><a href="{{route('apply_person')}}">{{__('header.my_applies')}}</a></li>
                       @endif 
                       @endauth()
 

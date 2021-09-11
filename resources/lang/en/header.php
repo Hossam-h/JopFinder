@@ -12,5 +12,6 @@ return[
     'profile'=>'profile',
     'create_profile'=>'create profile',
     'Admin_dash'=>'Admin dash',
-    'post_jop'=>'Post a new jop'
+    'post_jop'=>'Post a new jop',
+    'my_applies'=>'My applies'
 ];

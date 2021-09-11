@@ -119,7 +119,7 @@
           <div class="col-md-4 block-16" data-aos="fade-up" data-aos-delay="200">
             <div class="d-flex mb-0">
               <h2 class="mb-5 h3 mb-0">{{__('home.feature_jop')}}</h2>
-              <div class="ml-auto mt-1"><a href="#" class="owl-custom-prev">Prev</a> / <a href="#" class="owl-custom-next">Next</a></div>
+              <div class="ml-auto mt-1"><a href="#" class="owl-custom-prev">{{__('home.prev')}}</a> / <a href="#" class="owl-custom-next">{{__('home.next')}}</a></div>
             </div>
 
             <div class="nonloop-block-16 owl-carousel">
@@ -144,34 +144,69 @@
       </div>
     </div>
 
-    <div class="site-section" data-aos="fade">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-6 mb-5 mb-md-0">
-            
-              <div class="img-border">
-                <a href="https://vimeo.com/28959265" class="popup-vimeo image-play">
-                  <span class="icon-wrap">
-                    <span class="icon icon-play"></span>
-                  </span>
-                  <img src="{{asset('images/hero_2.jpg')}}" alt="Image" class="img-fluid rounded">
-                </a>
-              </div>
-            
-          </div>
-          <div class="col-md-5 ml-auto">
-            <div class="text-left mb-5 section-heading">
-              <h2>{{__('home.testimonies')}}</h2>
-            </div>
+    <!--start testemonial-->
+<div class="testemonial-titel">
+  <h2 class="text-center">{{__('home.testimonies')}}</h2>
+</div>
+<div class="testemonial">
+  <div class="overlay"></div>
 
-            <p class="mb-4 h5 font-italic lineheight1-5">{{__('home.body_testimonies')}}</p>
-            <p>&mdash; <strong class="text-black font-weight-bold">John Holmes</strong>, Marketing Strategist</p>
-            <p><a href="https://vimeo.com/28959265" class="popup-vimeo text-uppercase">Watch Video <span class="icon-arrow-right small"></span></a></p>
+  
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://sa1s3optim.patientpop.com/assets/images/provider/photos/1888657.jpg" class="d-block" alt="...">
+          <div class="carousel-caption  d-sm-block">
+            <h5>Mohamed Khaled</h5>
+            <p>Some representative placeholder content for the first slide
+              Some representative placeholder content for the first slide.</p>
           </div>
         </div>
+        <div class="carousel-item">
+          <img src="https://images.unsplash.com/photo-1586083702768-190ae093d34d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fG1lbiUyMHBlcmZ1bWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80" class="d-block" alt="...">
+          <div class="carousel-caption  d-sm-block">
+            <h5>Mostafa sameh</h5>
+            <p>Some representative placeholder content for the first slide
+              Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://thumbs.dreamstime.com/b/portrait-handsome-smiling-young-man-folded-arms-isolated-gray-background-joyful-cheerful-men-crossed-hands-studio-shot-172868988.jpg" class="d-block" alt="...">
+          <div class="carousel-caption  d-sm-block">
+            <h5>Nour Mostafa</h5>
+            <p>Some representative placeholder content for the first slide
+              Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://media.gettyimages.com/photos/smiling-man-outdoors-in-the-city-picture-id1179420343?s=612x612" class="d-block" alt="...">
+          <div class="carousel-caption  d-sm-block">
+            <h5>Ahmed Mostafa</h5>
+            <p>Some representative placeholder content for the first slide
+              Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
+  </div>
 
+</div>
+<!--End testemonial-->
 
     <div class="site-blocks-cover overlay inner-page" style="background-image: url('images/hero_1.jpg');" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">

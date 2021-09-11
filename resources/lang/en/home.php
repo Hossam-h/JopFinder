@@ -26,6 +26,8 @@ return[
     'team'=>'The team',
     'edit'=>'edit',
     'delete'=>'delete',
-    'add'=>'Add'
+    'add'=>'Add',
+    'prev'=>'Prev',
+    'next'=>'next'
     
 ];

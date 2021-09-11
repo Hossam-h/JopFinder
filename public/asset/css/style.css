@@ -980,3 +980,71 @@ a {
 .fa-question{
   font-size: 100px;
 }
+/*start testemonial*/
+.testemonial-titel{
+  margin: 20px 0px 0px 20px;
+  color: var(--main-color2);
+}
+.testemonial{
+  -webkit-background-size:cover;
+  background-size: cover;
+  background-image:url('https://image.shutterstock.com/image-photo/business-find-new-job-interview-260nw-690895558.jpg') ;
+  
+  position: relative;
+  margin-top: 20px;
+}
+.testemonial .overlay{
+  position: absolute;
+  top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+background-color: rgba(100, 100, 100,.6); 
+  
+
+}
+.testemonial .carousel-inner{
+  background-color: transparent !important;
+}
+.testemonial .carousel-inner img{
+  margin: 120px auto;
+  width: 250px !important;
+  height: 250px !important;
+  border-radius: 50%;
+
+}
+.testemonial .carousel-caption{
+  bottom:-104px ;
+}
+
+.testemonial .carousel-control-next{
+  border: none;
+  background: none;
+}
+
+.testemonial .carousel-control-prev{
+  border: none;
+  background: none;
+}
+
+.testemonial .carousel-control-next-icon {
+  cursor: pointer;
+}
+.testemonial .carousel-control-prev-icon{
+ 
+  cursor: pointer;
+}
+.visually-hidden{
+  visibility: hidden;
+
+}
+.testemonial .carousel-indicators button{
+  border-radius: 50%;
+  width: 13px !important;
+  height: 13px !important;
+  border: 1px solid #fff !important;
+  cursor: pointer;
+  margin-left: 1.5px !important;
+  outline: none;
+}
+/*end testemenial*/

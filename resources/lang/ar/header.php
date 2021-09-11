@@ -12,5 +12,6 @@ return[
     'profile'=>'الملف الشخصي',
     'create_profile'=>'انشاء ملف شخصي ',
     'Admin_dash'=>'لوحة التحكم',
-    'post_jop'=>'انشاء وظيفه'
+    'post_jop'=>'انشاء وظيفه',
+    'my_applies'=>'تقديماتي'
 ];
