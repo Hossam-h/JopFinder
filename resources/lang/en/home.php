@@ -23,6 +23,9 @@ return[
     'wait_you'=>'in wait you',
     'our_services'=>'Our services',
     'social_link'=>'Our links',
-    'team'=>'The team'
+    'team'=>'The team',
+    'edit'=>'edit',
+    'delete'=>'delete',
+    'add'=>'Add'
     
 ];

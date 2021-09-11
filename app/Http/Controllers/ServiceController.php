@@ -45,7 +45,11 @@ class ServiceController extends Controller
 
         $data=$request->except('_token');
         if($data){
-            Service::create($data);
+            Service::create([
+                'tittle'=> ['en'=>$request->tittle,'ar'=>$request->tittle_ar],
+                'description'=>['en'=>$request->description,'ar'=>$request->description_ar],
+                'icon'=>$request->icon         
+            ]);
         }
         return \redirect()->route('services.index');
         
@@ -84,19 +88,21 @@ class ServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $update=Service::find($id);
+        $row=Service::find($id);
         
         $request->validate([
             'icon'=>'required|string|unique:services,icon',
             'tittle'=>'required|string|unique:services,tittle',
             'description'=>'required|string|unique:services,description',
         ]);
-
-        $data=$request->except('_token');
-       
-        if($data){
-            $update->update($data);
-        } 
+dd($request->description,$request->icon);
+            $row->update([
+                'tittle'=> ['en'=>$request->tittle,'ar'=>$request->tittle_ar],
+                dd('ok'),
+                'description'=>['en'=>$request->description,'ar'=>$request->description_ar],
+                'icon'=>$request->icon         
+            ]);
+        
         return \redirect()->route('services.index');
     }
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{app()->getLocale()}}">
   <head>
     <title>Job Finder &mdash; Colorlib Website Template</title>
     <meta charset="utf-8">

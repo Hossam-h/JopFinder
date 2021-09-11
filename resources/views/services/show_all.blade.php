@@ -22,12 +22,12 @@
                                 <td>{{$service->tittle}}</td>
                                 <td>{{$service->icon}}</td>
                                 <td>{{$service->description}}</td>
-                                <td><a href="{{route('services.edit',['service'=> $service->id])}}" class="btn btn-warning">Edit</a></td>
+                                <td><a href="{{route('services.edit',['service'=> $service->id])}}" class="btn btn-warning">{{__('home.edit')}}</a></td>
                                 <td>
                                 <form action="{{route('services.destroy',['service'=> $service->id])}}" method="post">
                               @csrf
                                {{method_field('delete')}}
-                             <button type="submit" class="btn btn-danger"> Delete</button>
+                             <button type="submit" class="btn btn-danger"> {{__('home.delete')}}</button>
                                  </form>
                                 </td>
                             </tr>
