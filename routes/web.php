@@ -16,6 +16,7 @@ use \App\Http\Controllers\QuestionController;
 use \App\Http\Controllers\Cruduser;
 use \App\Http\Controllers\LiveSearch;
 use \App\Http\Controllers\ServiceController;
+use \App\Http\Controllers\TestemonialController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,7 +30,7 @@ use \App\Http\Controllers\ServiceController;
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath','auth' ]
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath',]
     ], function(){ //...
     //---------------------------------
 
@@ -103,7 +104,8 @@ Route::get('/live_search/action_jop', [LiveSearch::class,'action_jop'])->name('l
 
 //services
 Route::resource('/services',ServiceController::class);
-
+ //testemonial
+ Route::resource('/testemonial',TestemonialController::class);
 //-------------------------------------
 });
     

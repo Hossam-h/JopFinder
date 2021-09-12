@@ -1,5 +1,9 @@
 @include('header.headerlink')  
 
+
+<div >
+<p class="text-center text-success">{{session('success')}}</p>
+</div>
     <div class="site-blocks-cover overlay" style="background-image: url('../asset/images/hero_1.jpg');" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center">
@@ -153,46 +157,27 @@
 
   
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-      </div>
+     
       <div class="carousel-inner">
-        <div class="carousel-item active">
+        
+      <div class="carousel-item active">
           <img src="https://sa1s3optim.patientpop.com/assets/images/provider/photos/1888657.jpg" class="d-block" alt="...">
           <div class="carousel-caption  d-sm-block">
-            <h5>Mohamed Khaled</h5>
-            <p>Some representative placeholder content for the first slide
-              Some representative placeholder content for the first slide.</p>
+            <h5>{{__('home.Mohamed')}}</h5>
+            <p>{{__('home.testo_body')}}</p>
           </div>
         </div>
+    
+@foreach($testemoniales as $testemoniale)
         <div class="carousel-item">
-          <img src="https://images.unsplash.com/photo-1586083702768-190ae093d34d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fG1lbiUyMHBlcmZ1bWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80" class="d-block" alt="...">
+          <img src="{{asset('images/testemonial').'/'. $testemoniale->image}}" class="d-block" alt="...">
           <div class="carousel-caption  d-sm-block">
-            <h5>Mostafa sameh</h5>
-            <p>Some representative placeholder content for the first slide
-              Some representative placeholder content for the first slide.</p>
+          
+          <h5> {{$testemoniale->name}}</h5>
+            <p>{{$testemoniale->opinion}}</p>
           </div>
         </div>
-        <div class="carousel-item">
-          <img src="https://thumbs.dreamstime.com/b/portrait-handsome-smiling-young-man-folded-arms-isolated-gray-background-joyful-cheerful-men-crossed-hands-studio-shot-172868988.jpg" class="d-block" alt="...">
-          <div class="carousel-caption  d-sm-block">
-            <h5>Nour Mostafa</h5>
-            <p>Some representative placeholder content for the first slide
-              Some representative placeholder content for the first slide.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="https://media.gettyimages.com/photos/smiling-man-outdoors-in-the-city-picture-id1179420343?s=612x612" class="d-block" alt="...">
-          <div class="carousel-caption  d-sm-block">
-            <h5>Ahmed Mostafa</h5>
-            <p>Some representative placeholder content for the first slide
-              Some representative placeholder content for the first slide.</p>
-          </div>
-        </div>
-        
+        @endforeach
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -208,13 +193,14 @@
 </div>
 <!--End testemonial-->
 
-    <div class="site-blocks-cover overlay inner-page" style="background-image: url('images/hero_1.jpg');" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="site-blocks-cover overlay inner-page" style="background-image: url('/images/hero_1.jpg');" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-6 text-center" data-aos="fade">
             <h1 class="h3 mb-0">{{__('home.dream_jop')}}</h1>
             <p class="h3 text-white mb-5">{{__('home.wait_you')}}</p>
             <p><a href="{{route('showall')}}" class="btn btn-outline-warning py-3 px-4">{{__('home.find_jop')}}</a> </p>
+            <p><a href="{{route('testemonial.create')}}" class="btn btn-outline-warning py-3 px-4">{{__('home.add_testemonail')}}</a> </p>
             
           </div>
         </div>

@@ -28,6 +28,12 @@ return[
     'delete'=>'delete',
     'add'=>'Add',
     'prev'=>'Prev',
-    'next'=>'next'
+    'next'=>'next',
+    'add_testemonail'=>'add your testemonail',
+    'Mohamed'=>'Mohamed',
+    'testo_body'=>'Some representative placeholder content for the first slide Some representative placeholder content for the first slide.
+
+
+    '
     
 ];
