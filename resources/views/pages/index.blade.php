@@ -161,7 +161,7 @@
       <div class="carousel-inner">
         
       <div class="carousel-item active">
-          <img src="https://sa1s3optim.patientpop.com/assets/images/provider/photos/1888657.jpg" class="d-block" alt="...">
+          <img src="{{asset('asset/images/active.jpg')}}" class="d-block" alt="...">
           <div class="carousel-caption  d-sm-block">
             <h5>{{__('home.Mohamed')}}</h5>
             <p>{{__('home.testo_body')}}</p>

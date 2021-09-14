@@ -6,7 +6,7 @@
   <div class="sidebar-brand-icon rotate-n-15">
     <i class="fas fa-laugh-wink"></i>
   </div>
-  <div class="sidebar-brand-text mx-3">FUNDA <sup>WEB IT</sup></div>
+  <div class="sidebar-brand-text mx-3">{{__('admin.admin')}}<sup>{{__('admin.dashboard')}}</sup></div>
 </a>
 
 <!-- Divider -->
@@ -16,7 +16,7 @@
 <li class="nav-item active">
   <a class="nav-link" href="">
     <i class="fas fa-fw fa-tachometer-alt"></i>
-    <span>Dashboard</span></a>
+    <span>{{__('admin.dashboard')}}</span></a>
 </li>
 
 <!-- Divider -->
@@ -31,7 +31,7 @@
 <li class="nav-item ">
   <a class="nav-link pt-0" href="{{route('show_all_user.index')}}">
   <i class="fas fa-user"></i>
-    <span>Users</span></a>
+    <span>{{__('admin.users')}}</span></a>
 </li>
 
 <li class="nav-item ">
@@ -44,19 +44,19 @@
 <li class="nav-item ">
 <a class="nav-link pt-0" href="{{route('edit_about',['id'=>$about_us->id])}}">
 <i class="far fa-edit"></i>
-    <span>edit about</span></a>
+    <span>{{__('admin.edit_about')}}</span></a>
 </li>
 
 
 <li class="nav-item pt-0">
   <a class="nav-link collapsed pt-0" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
   <i class="fas fa-user-friends"></i>
-    <span>Team</span>
+    <span>{{__('admin.team')}}</span>
   </a>
   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
-      <a class="collapse-item" href="{{route('Team.create')}}">create team</a>
-      <a class="collapse-item" href="{{route('Team.index')}}">edit or delete team</a>
+      <a class="collapse-item" href="{{route('Team.create')}}">{{__('admin.create_team')}}</a>
+      <a class="collapse-item" href="{{route('Team.index')}}">{{__('admin.edit_delete_team')}}</a>
     </div>
   </div>
 </li>
@@ -68,13 +68,13 @@
 <li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
     <i class="fas fa-fw fa-wrench"></i>
-    <span>Category</span>
+    <span>{{__('admin.category')}}</span>
   </a>
   <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       
-    <a class="collapse-item" href="{{route('create_category')}}">create Category</a>
-      <a class="collapse-item" href="{{route('all_category')}}">edit or delete Category</a>
+    <a class="collapse-item" href="{{route('create_category')}}">{{__('admin.create_category')}}</a>
+      <a class="collapse-item" href="{{route('all_category')}}">{{__('admin.edit_delete_category')}}</a>
     </div>
   </div>
 </li>
@@ -86,11 +86,11 @@
 <div class="dropdown dash_admin">
 <i class="fas fa-concierge-bell"></i>
   <button class=" dropdown-toggle dropdown-toggle-dash"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  Question
+  {{__('admin.question')}}
   </button>
   <div class="dropdown-menu p-4" aria-labelledby="dropdownMenuButton">
-  <a class="collapse-item pt-4" style="list-style:none; color:black; text-decoration:none " href="{{route('question.create')}}">create  Question</a> <br>
-      <a class="collapse-item pt-8" style="list-style:none; color:black;text-decoration:none "  href="{{route('question.index')}}">edit or delete  Question</a>
+  <a class="collapse-item pt-4" style="list-style:none; color:black; text-decoration:none " href="{{route('question.create')}}">{{__('admin.create_Question')}}</a> <br>
+      <a class="collapse-item pt-8" style="list-style:none; color:black;text-decoration:none "  href="{{route('question.index')}}">{{__('admin.edit_delete_Question')}}</a>
   </div>
 </div>
 </li>
@@ -100,12 +100,12 @@
 <li class="nav-item ml-4">
 <div class="dropdown dash_admin">
 <i class="fas fa-question" ></i>
-  <button class=" dropdown-toggle  dropdown-toggle-dash"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  Services
+  <button class=" dropdown-toggle  dropdown-toggle-dash"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="{{__('admin.srue" ar')}}ia-expanded="false">
+  {{__('admin.services')}}
   </button>
   <div class="dropdown-menu p-4" aria-labelledby="dropdownMenuButton">
-  <a class="collapse-item pt-4" style="list-style:none; color:black; text-decoration:none " href="{{route('services.create')}}">create Services</a> <br>
-      <a class="collapse-item pt-8" style="list-style:none; color:black;text-decoration:none "  href="{{route('services.index')}}">edit or delete Services</a>
+  <a class="collapse-item pt-4" style="list-style:none; color:black; text-decoration:none " href="{{route('services.create')}}">{{__('admin.create_services')}}</a> <br>
+      <a class="collapse-item pt-8" style="list-style:none; color:black;text-decoration:none "  href="{{route('services.index')}}">{{__('admin.edit_delete_services')}}</a>
   </div>
 </div>
 </li>
