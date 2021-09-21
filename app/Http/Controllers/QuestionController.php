@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Question;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\QuistionRequest;
 class QuestionController extends Controller
 {
     /**
@@ -34,18 +34,16 @@ class QuestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(QuistionRequest $request)
     {
     
-    
-            $request->validate([
-                'question'=>'required',
-                'answer'=>'required'
-            ]);
-       
-               $data=$request->except('_token');
-       
-               Question::create($data);
+      
+       $validtae=$request->validated();
+               Question::create([
+                  'question'=>['en'=>$request->question,'ar'=>$request->question_ar],
+                  'answer'=>['en'=>$request->answer,'ar'=>$request->answer_ar],
+
+               ]);
         
                return redirect()->route('question.index');
 
@@ -90,9 +88,11 @@ class QuestionController extends Controller
             'answer'=>'required'
         ]);
    
-           $data=$request->except('_token');
-   
-           $update_query->update($data);
+          
+           $update_query->update([
+            'question'=>['en'=>$request->question,'ar'=>$request->question_ar],
+            'answer'=>['en'=>$request->answer,'ar'=>$request->answer_ar],
+           ]);
         }
         return redirect()->route('question.index');
     }

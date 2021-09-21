@@ -47,7 +47,7 @@
           <!-- <div class="col-md-7 text-center"> -->
             <div class="col-md-6 mx-auto text-center mb-5 section-heading">
               <h2 class="mb-5">{{__('home.team')}}</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum magnam illum maiores adipisci pariatur, eveniet.</p>
+              <p>{{__('home.team_text')}}</p>
             </div>
             
           <!-- </div> -->
@@ -75,7 +75,7 @@
       <div class="container">
         <div class="row justify-content-center text-center mb-5">
           <div class="col-md-6" data-aos="fade" >
-            <h2>Frequently Ask Questions</h2>
+            <h2>{{__('home.ques')}}</h2>
           </div>
         </div>
         
@@ -97,7 +97,7 @@
                   <p>{{$quey->answer}}</p>
                 </div>
               </div>
-            </div> <!-- .accordion-item -->
+            </div> 
             @endforeach
           </div>
           </div>

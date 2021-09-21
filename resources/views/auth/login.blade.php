@@ -32,6 +32,6 @@
     <label class="form-check-label" for="exampleCheck1">{{__('login.remember')}}</label>
   </div>
 
-        <button type="submit" class="btn btn-primary">{{__('submit')}}</button>
+        <button type="submit" class="btn btn-primary">{{__('login.submit')}}</button>
         </form>
 </div>

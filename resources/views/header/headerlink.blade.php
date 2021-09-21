@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-@if( app()->getLocale() == "ar")
-<html dir="rtl" lang="{{app()->getLocale()}}">
-@else
-  <html dir="ltr" lang="{{app()->getLocale()}}">
-@endif()
+
+<html  lang="{{app()->getLocale()}}">
+
   <head>
     <title>Job Finder &mdash; Colorlib Website Template</title>
     <meta charset="utf-8">
@@ -59,7 +57,7 @@
       
         <div class="row align-items-center">
           <div class="col-1">
-            <h2 class="mb-0 site-logo"><a href="index.html">Job<strong class="font-weight-bold">Finder</strong> </a></h2>
+            <h2 class="mb-0 site-logo"><a href="{{route('index')}}">Job<strong class="font-weight-bold">Finder</strong> </a></h2>
           </div>
           <div class="col-11">
             <nav class="site-navigation text-right" role="navigation">

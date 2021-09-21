@@ -3,7 +3,7 @@
 return[
     'login'=>'login',
     'email'=>'email',
-    'rememberme'=>'Remember me',
+    'remember'=>'Remember me',
     'password'=>'Password',
     'submit'=>'login'
 ];

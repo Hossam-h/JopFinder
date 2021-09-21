@@ -130,7 +130,7 @@
 
               
               @foreach($jops as $jop)
-              <div class="border rounded p-4 bg-white">
+              <div class="border  p-4 bg-white">
                 <h2 class="h5">{{$jop->jop_name}} </h2>
                 
                 <p>
@@ -141,6 +141,7 @@
                 <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at ipsum commodi hic, cum esse asperiores libero molestiae, perferendis consectetur assumenda iusto, dolorem nemo maiores magnam illo laborum sit, dicta.</p>
               </div>
               @endforeach
+              
             </div>
 
           </div>

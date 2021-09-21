@@ -15,10 +15,36 @@
             @enderror
 
             
+<!--- Ques in ar-->
+<div class="row form-group">
+                <div class="col-md-12"><h3>Edit Question_Ar </h3></div>
+                <div class="col-md-12 mb-3 mb-md-0">
+                 <input type="text" name="question_ar" class="form-control" value="{{$edit->question}}" placeholder='add qusetion'>
+                </div>
+              </div>
+
+              @error('question')
+            <span class="alert alert-danger">{{$message}}</span>
+            @enderror
+
+
               <div class="row form-group">
                 <div class="col-md-12"><h3>Edit Answer</h3></div>
                 <div class="col-md-12 mb-3 mb-md-0">
                   <textarea name="answer" value="{{$edit->answer}}" class="form-control" id="" cols="30" rows="5"></textarea>
+                </div>
+              </div>
+
+              @error('answer')
+            <span class="alert alert-danger">{{$message}}</span>
+            @enderror
+
+
+<!--- answer in ar-->
+            <div class="row form-group">
+                <div class="col-md-12"><h3>Edit Answer in Ar</h3></div>
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <textarea name="answer_ar" value="{{$edit->answer}}" class="form-control" id="" cols="30" rows="5"></textarea>
                 </div>
               </div>
 

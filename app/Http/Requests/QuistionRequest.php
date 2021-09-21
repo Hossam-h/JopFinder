@@ -1,0 +1,46 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class QuistionRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            'question'=>'required|string',
+                'answer'=>'required|string'
+
+        ];
+    }
+
+
+
+    public function message(){
+        return[
+            'question.required'=>\trans('validation.required'),
+            'question.string'=>\trans('validation.string'),
+            'answer.required'=>\trans('validation.required'),
+            'answer.string'=>\trans('validation.string'),
+
+
+        ];
+        
+    }
+}

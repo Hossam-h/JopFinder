@@ -17,6 +17,7 @@ use \App\Http\Controllers\Cruduser;
 use \App\Http\Controllers\LiveSearch;
 use \App\Http\Controllers\ServiceController;
 use \App\Http\Controllers\TestemonialController;
+//use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,11 +28,12 @@ use \App\Http\Controllers\TestemonialController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(
-    [
-        'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath',]
-    ], function(){ //...
+
+
+
+Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
+
+    Auth::routes();
     //---------------------------------
 
     
@@ -109,4 +111,3 @@ Route::resource('/services',ServiceController::class);
 //-------------------------------------
 });
     
-

@@ -31,9 +31,8 @@ return[
     'next'=>'next',
     'add_testemonail'=>'add your testemonail',
     'Mohamed'=>'Mohamed',
-    'testo_body'=>'Some representative placeholder content for the first slide Some representative placeholder content for the first slide.
-
-
-    '
+    'testo_body'=>'Some representative placeholder content for the first slide Some representative placeholder content for the first slide.',
+    'team_text'=>'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum magnam illum maiores adipisci pariatur, eveniet.',
+    'ques'=>'Frequently Ask Questions'
     
 ];

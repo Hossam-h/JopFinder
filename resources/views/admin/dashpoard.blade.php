@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-@if( app()->getLocale() == "ar")
-<html dir="rtl" lang="{{app()->getLocale()}}">
-@else
   <html dir="ltr" lang="{{app()->getLocale()}}">
-@endif()
+
+  
 
 
 <head>

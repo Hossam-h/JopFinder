@@ -40,7 +40,3 @@
                         </tbody>
                     </table>
                 </div>
-
-
-
-

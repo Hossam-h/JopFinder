@@ -116,7 +116,7 @@ class LiveSearch extends Controller
       );
      
       echo json_encode($data);
-   
+      
      }
 
     // return redirect()->route('index');
