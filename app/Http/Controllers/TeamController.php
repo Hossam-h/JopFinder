@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Team;
 use Illuminate\Http\Request;
+use App\Http\Requests\TeamRequest;
 
 class TeamController extends Controller
 {
@@ -34,13 +35,9 @@ class TeamController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TeamRequest $request)
     {
-        $request->validate([
-            'name'=>'required|string',
-            'jop'=>'required|string',
-            'image'=>'required|image|mimes:jpg,png,jpeg,svg|max:2048KB',
-        ]);
+        $request->validated();
 
         
        
@@ -92,13 +89,9 @@ class TeamController extends Controller
      * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)
+    public function update(TeamRequest $request ,$id)
     {
-        $request->validate([
-            'name'=>'required|string',
-            'jop'=>'required|string',
-            
-        ]);
+        $request->validated();
 
         
         $row=Team::find($id);

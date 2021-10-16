@@ -25,6 +25,7 @@ class QuestionController extends Controller
      */
     public function create()
     {
+        
         return view('question.add');
     }
 
@@ -34,11 +35,14 @@ class QuestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(QuistionRequest $request)
+    public function store(Request $request)
     {
     
       
-       $validtae=$request->validated();
+       $validtae=$request->validate([
+           'question'=>'required',
+           'answer'=>'required'
+       ]);
                Question::create([
                   'question'=>['en'=>$request->question,'ar'=>$request->question_ar],
                   'answer'=>['en'=>$request->answer,'ar'=>$request->answer_ar],

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-
-<html  lang="{{app()->getLocale()}}">
-
+@if(app()->getLocale()=='ar')
+<html  lang="{{app()->getLocale()}}" dir="rtl">
+@else
+<html  lang="{{app()->getLocale()}}" dir="ltr">
+  @endif
   <head>
     <title>Job Finder &mdash; Colorlib Website Template</title>
     <meta charset="utf-8">

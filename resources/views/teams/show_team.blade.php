@@ -8,8 +8,8 @@
                         <thead>
                             <tr>
                                 <th>id</th>
-                                <th>name</th>
-                                <th>jop</th>
+                                <th>{{__('home.name')}}</th>
+                                <th>{{__('home.jop')}}</th>
                                 <th>image</th>                        
                                 <th>Edit</th>
                                 <th>Delete</th>

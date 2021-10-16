@@ -56,7 +56,7 @@
      </div>
     
 <!-- end table search-->
-    <div class="site-section">
+    <div class="site-section" id="categ">
       <div class="container">
         <div class="row">
           <div class="col-md-6 mx-auto text-center mb-5 section-heading">
@@ -85,7 +85,7 @@
     <div class="site-section bg-light">
       <div class="container">
         <div class="row">
-          <div class="col-md-8 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-12 " data-aos="fade-up" data-aos-delay="100">
             <h2 class="mb-5 h3">{{__('home.recent_jop')}}</h2>
             <div class="rounded border jobs-wrap">
 
@@ -120,37 +120,13 @@
                 <span class="icon-plus-circle"></span> {{__('home.more_jop')}}</a>
             </div>
           </div>
-          <div class="col-md-4 block-16" data-aos="fade-up" data-aos-delay="200">
-            <div class="d-flex mb-0">
-              <h2 class="mb-5 h3 mb-0">{{__('home.feature_jop')}}</h2>
-              <div class="ml-auto mt-1"><a href="#" class="owl-custom-prev">{{__('home.prev')}}</a> / <a href="#" class="owl-custom-next">{{__('home.next')}}</a></div>
-            </div>
-
-            <div class="nonloop-block-16 owl-carousel">
-
-              
-              @foreach($jops as $jop)
-              <div class="border  p-4 bg-white">
-                <h2 class="h5">{{$jop->jop_name}} </h2>
-                
-                <p>
-                  <span class="d-block"><span class="icon-suitcase"></span>{{$jop->company_name}}</span>
-                  <span class="d-block"><span class="icon-room"></span>{{$jop->location}}</span>
-                  <span class="d-block"><span class="icon-money mr-1"></span>{{$jop->salary}}</span>
-                </p>
-                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at ipsum commodi hic, cum esse asperiores libero molestiae, perferendis consectetur assumenda iusto, dolorem nemo maiores magnam illo laborum sit, dicta.</p>
-              </div>
-              @endforeach
-              
-            </div>
-
-          </div>
+          
         </div>
       </div>
     </div>
 
     <!--start testemonial-->
-<div class="testemonial-titel">
+<div class="testemonial-titel" id="testemonial">
   <h2 class="text-center">{{__('home.testimonies')}}</h2>
 </div>
 <div class="testemonial">
@@ -210,11 +186,11 @@
 
     
 
-    <div class="site-section site-block-feature bg-light">
+    <div id="Serv"  class="site-section site-block-feature bg-light">
       <div class="container">
         
         <div class="text-center mb-5 section-heading">
-          <h2>{{__('home.our_services')}}</h2>
+          <h2 >{{__('home.our_services')}}</h2>
         </div>
 
         <div class="row text-center  border-bottom">

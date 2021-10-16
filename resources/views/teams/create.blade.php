@@ -1,11 +1,11 @@
 @include('header.headerlink')
-<h2 class="text-center">Add to team</h2>
+<h2 class="text-center">{{__('team.Add_team')}}</h2>
     <div class="container col-6">
 <form action="{{route('Team.store')}}" method="POST" enctype="multipart/form-data">
                   @csrf
           
             <div class="form-group text-center">
-            <label for="exampleInputEmail1">Name</label>
+            <label for="exampleInputEmail1">{{__('home.name')}}</label>
             <input type="text" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp">
            </div>
         @error('name')
@@ -16,7 +16,7 @@
 
 
          <div class="form-group text-center">
-            <label for="exampleInputEmail1">Jop</label>
+            <label for="exampleInputEmail1">{{__('home.jop')}}</label>
             <input type="text" class="form-control" name="jop" id="exampleInputEmail1" aria-describedby="emailHelp">
            </div>
         @error('jop')
@@ -36,6 +36,6 @@
 <span class="alert-danger">{{$message}}</span>
   @enderror
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">{{__('home.submit')}}</button>
 </form>
 </div>

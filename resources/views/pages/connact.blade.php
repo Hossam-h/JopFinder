@@ -1,95 +1,97 @@
-@include('header.headerlink')  
- 
-    <div class="unit-5 overlay" style="background-image: url('../asset/images/hero_1.jpg');">
-      <div class="container text-center">
-        <h2 class="mb-0">Contact</h2>
-        <p class="mb-0 unit-6"><a href="index.html">Home</a> <span class="sep">></span> <span>Contact</span></p>
-      </div>
-    </div>
+@include('header.headerlink')
 
-    
-    <div class="site-section bg-light">
-      <div class="container">
+<div class="unit-5 overlay" style="background-image: url('../asset/images/hero_1.jpg');">
+    <div class="container text-center">
+        <h2 class="mb-0">{{__('connact.connact')}}</h2>
+
+    </div>
+</div>
+
+<div class="site-section bg-light">
+    <div class="container">
         <div class="row">
-       
-          <div class="col-md-12 col-lg-8 mb-5">
-          
-            
-          
-            <form action="{{route('store-message')}}" method="POST" class="p-5 bg-white">
-              @csrf
-              <div class="row form-group">
-                <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="fullname">Full Name</label>
-                  <input type="text" id="fullname" name="name" class="form-control" placeholder="Full Name">
-                </div>
-              </div>
-              @error('name')
-           <span class="alert-danger">{{$message}}</span>
-              @enderror
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <label class="font-weight-bold" for="email">Email</label>
-                  <input type="email" id="email" name="email" class="form-control" placeholder="Email Address">
-                </div>
-              </div>
-              @error('email')
-           <span class="alert-danger">{{$message}}</span>
-              @enderror
-               
-              <div class="row form-group">
-                <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="phone">Phone</label>
-                  <input type="text" id="phone" name="phone" class="form-control" placeholder="Phone #">
-                </div>
-              </div>
-              @error('phone')
-           <span class="alert-danger">{{$message}}</span>
-              @enderror
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <label class="font-weight-bold" for="message">Message</label> 
-                  <textarea  id="message" name="message" cols="30" rows="5" class="form-control" placeholder="Say hello to us"></textarea>
-                </div>
-              </div>
-              @error('message')
-           <span class="alert-danger">{{$message}}</span>
-              @enderror
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <input type="submit" value="Send Message" class="btn btn-primary pill px-4 py-2">
-                </div>
-              </div>
 
-  
-            </form>
-          </div>
+            <div class="col-md-12 col-lg-8 mb-5">
 
-          <div class="col-lg-4">
-            <div class="p-4 mb-3 bg-white">
-              <h3 class="h5 text-black mb-3">Contact Info</h3>
-              <p class="mb-0 font-weight-bold">Address</p>
-              <p class="mb-4">203 Fake St. Mountain View, San Francisco, California, USA</p>
+                <form action="{{route('store-message')}}" method="POST" class="p-5 bg-white">
+                    @csrf
+                    <div class="row form-group">
+                        <div class="col-md-12 mb-3 mb-md-0">
+                            <label class="font-weight-bold" for="fullname">{{__('connact.fullname')}}</label>
+                            <input type="text" id="fullname" name="name" class="form-control"
+                                placeholder="{{__('connact.fullname')}}">
+                        </div>
+                    </div>
+                    @error('name')
+                    <span class="alert-danger">{{$message}}</span>
+                    @enderror
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <label class="font-weight-bold" for="email">{{__('connact.email')}}</label>
+                            <input type="email" id="email" name="email" class="form-control"
+                                placeholder="{{__('connact.email')}}">
+                        </div>
+                    </div>
+                    @error('email')
+                    <span class="alert-danger">{{$message}}</span>
+                    @enderror
 
-              <p class="mb-0 font-weight-bold">Phone</p>
-              <p class="mb-4"><a href="#">+1 232 3235 324</a></p>
+                    <div class="row form-group">
+                        <div class="col-md-12 mb-3 mb-md-0">
+                            <label class="font-weight-bold" for="phone">{{__('connact.phone')}}</label>
+                            <input type="text" id="phone" name="phone" class="form-control"
+                                placeholder="{{__('connact.phone')}}">
+                        </div>
+                    </div>
+                    @error('phone')
+                    <span class="alert-danger">{{$message}}</span>
+                    @enderror
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <label class="font-weight-bold" for="message">{{__('connact.message')}}</label>
+                            <textarea id="message" name="message" cols="30" rows="5" class="form-control"
+                                placeholder="{{__('connact.message')}}"></textarea>
+                        </div>
+                    </div>
+                    @error('message')
+                    <span class="alert-danger">{{$message}}</span>
+                    @enderror
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <input type="submit" value="{{__('connact.send')}}" class="btn btn-primary pill px-4 py-2">
+                        </div>
+                    </div>
 
-              <p class="mb-0 font-weight-bold">Email Address</p>
-              <p class="mb-0"><a href="#">youremail@domain.com</a></p>
 
+                </form>
             </div>
-            
-            <div class="p-4 mb-3 bg-white">
-              <h3 class="h5 text-black mb-3">More Info</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ad iure porro mollitia architecto hic consequuntur. Distinctio nisi perferendis dolore, ipsa consectetur? Fugiat quaerat eos qui, libero neque sed nulla.</p>
-              <p><a href="#" class="btn btn-primary px-4 py-2 text-white pill">Learn More</a></p>
+
+            <div class="col-lg-4">
+                <div class="p-4 mb-3 bg-white">
+                    <h3 class="h5 text-black mb-3">{{__('connact.connactinfo')}}</h3>
+                    <p class="mb-0 font-weight-bold">{{__('connact.address')}}</p>
+                    <p class="mb-4">203{{__('connact.address_detail')}}</p>
+
+                    <p class="mb-0 font-weight-bold">{{__('connact.phone')}}</p>
+                    <p class="mb-4"><a href="#">+1 232 3235 324</a></p>
+
+                    <p class="mb-0 font-weight-bold">{{__('connact.email')}}</p>
+                    <p class="mb-0"><a href="#">youremail@domain.com</a></p>
+
+                </div>
+
+                <div class="p-4 mb-3 bg-white">
+                    <h3 class="h5 text-black mb-3">{{__('connact.more_info')}}</h3>
+                    <p>{{__('connact.info_data')}}</p>
+                    <p><a href="{{route('index_about')}}"
+                            class="btn btn-primary px-4 py-2 text-white pill">{{__('connact.more')}}</a></p>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-
-    <div class="py-5 quick-contact-info">
+</div>
+<!-- 
+    <div class=" p quick-contact-info">
       <div class="container">
         <div class="row">
           <div class="col-md-4">
@@ -113,5 +115,5 @@
           </div>
         </div>
       </div>
-    </div>
-      @include('footer.footer')  
+    </div> -->
+@include('footer.footer')

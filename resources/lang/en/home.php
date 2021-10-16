@@ -33,6 +33,10 @@ return[
     'Mohamed'=>'Mohamed',
     'testo_body'=>'Some representative placeholder content for the first slide Some representative placeholder content for the first slide.',
     'team_text'=>'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum magnam illum maiores adipisci pariatur, eveniet.',
-    'ques'=>'Frequently Ask Questions'
+    'ques'=>'Frequently Ask Questions',
+    'name'=>'name',
+    'submit'=>'submit',
+    'select_image'=>'Select image',
+    'apply_jop'=>'Apply jop'
     
 ];

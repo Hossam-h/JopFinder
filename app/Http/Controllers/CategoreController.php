@@ -44,7 +44,7 @@ class CategoreController extends Controller
         
         Categore::create([
             'category'=>['en'=>$request->category,'ar'=>$request->category_ar],
-            'icon'=>$request->category
+            'icon'=>$request->icon
 
         ]);
 
@@ -105,7 +105,7 @@ class CategoreController extends Controller
 
      $ctaegory_update->update([
         'category'=>['en'=>$request->category,'ar'=>$request->category_ar],
-        'icon'=>$request->category
+        'icon'=>$request->icon
 
      ]);
 

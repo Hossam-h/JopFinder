@@ -10,7 +10,7 @@ return[
     'category'=>'category',
     'question'=>'question',
     'edit_delete_Question'=>'edit delete Question',
-    'create_Question'=>'create Question',
+    'create_Question'=>'Create Question',
     'services'=>'services',
     'create_services'=>'Create Services ',
     'edit_delete_services'=>'edit delete Services',

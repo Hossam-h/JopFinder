@@ -6,29 +6,28 @@
         <div class="row">
           <div class="col-md-4">
             <h3 class="footer-heading mb-4 text-white">{{__('header.About')}}</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat quos rem ullam, placeat amet.</p>
-            <p><a href="#" class="btn btn-primary pill text-white px-4">Read More</a></p>
+            <p>{{__('connact.info_data')}}</p>
+            <p><a href="{{route('index_about')}}" class="btn btn-primary px-4 py-2 text-white pill">{{__('connact.more')}}</a></p>
           </div>
           <div class="col-md-6">
             <div class="row">
               <div class="col-md-6">
-                <h3 class="footer-heading mb-4 text-white">Quick Menu</h3>
+                <h3 class="footer-heading mb-4 text-white">{{__('footer.menue')}}</h3>
                   <ul class="list-unstyled">
                   <li><a href="{{route('index_about')}}">{{__('header.About')}}</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Approach</a></li>
-                    <li><a href="#">Sustainability</a></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Careers</a></li>
+                    <li><a href="#Serv">{{__('footer.services')}}</a></li>
+                    <li><a href="{{route('showall')}}">{{__('footer.jops')}}</a></li>
+                    <li><a href="#testemonial">{{__('footer.testemonial')}}</a></li>
+                    <li><a href="#categ">{{__('footer.categ')}}</a></li>
                   </ul>
               </div>
               <div class="col-md-6">
-                <h3 class="footer-heading mb-4 text-white">Categories</h3>
+                <h3 class="footer-heading mb-4 text-white">{{__('footer.services')}}</h3>
                   <ul class="list-unstyled">
-                    <li><a href="#">Full Time</a></li>
-                    <li><a href="#">Freelance</a></li>
-                    <li><a href="#">Temporary</a></li>
-                    <li><a href="#">Internship</a></li>
+                    <li><a href="#Serv">{{__('footer.jops')}}</a></li>
+                    <li><a href="#Serv">{{__('footer.find')}}</a></li>
+                    <li><a href="#Serv">{{__('footer.sug')}}</a></li>
+                    <li><a href="#Serv">{{__('footer.internship')}}</a></li>
                   </ul>
               </div>
             </div>
@@ -62,7 +61,7 @@
         </div>
       </div>
     </footer>
-  </div>
+  
 
   <script src="{{asset('asset/js/jquery-3.3.1.min.js')}}"></script>
   <script src="{{asset('asset/js/jquery-3.0.0.js')}}"></script>

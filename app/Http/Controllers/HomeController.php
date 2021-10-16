@@ -22,8 +22,8 @@ class HomeController extends Controller
         $categores=Categore::all();
         
 
-        $num;
-        $num2;
+       // $num;
+       // $num2;
         foreach($categores as $cat){
             $num = $cat->id;       
              

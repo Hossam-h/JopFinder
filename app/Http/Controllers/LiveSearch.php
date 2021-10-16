@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Jop;
-use DB;
+use Illuminate\Support\Facades\DB;
 class LiveSearch extends Controller
 {
    public function index()

@@ -44,7 +44,7 @@ class ConnactController extends Controller
         $request->validate([
             'name'=>'required',
             'email'=>'required|max:255|min:10|email|unique:connacts,email',
-            'phone'=>'required|integer|min:9|unique:connacts,phone',
+            'phone'=>'required',
             'message'=>'required'
         ]);
         

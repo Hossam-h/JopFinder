@@ -17,6 +17,9 @@ use \App\Http\Controllers\Cruduser;
 use \App\Http\Controllers\LiveSearch;
 use \App\Http\Controllers\ServiceController;
 use \App\Http\Controllers\TestemonialController;
+use \App\Http\Controllers\GoogleController;
+use Laravel\Socialite\Facades\Socialite;
+
 //use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +36,7 @@ use \App\Http\Controllers\TestemonialController;
 
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
 
-    Auth::routes();
+    ///Auth::routes();
     //---------------------------------
 
     
@@ -98,6 +101,7 @@ Route::get('dash',[AdmindashController::class,'getall'])->name('dash');
 //qusetion and answer
 Route::resource('/question',QuestionController::class);
 
+Route::post('/questions',[QuestionController::class,'storing'])->name('storing');
 //-----------------------
 Route::get('search',[HomeController::class,'search'])->name('search');
 Route::get('/live_search', [LiveSearch::class,'index']);
@@ -109,5 +113,7 @@ Route::resource('/services',ServiceController::class);
  //testemonial
  Route::resource('/testemonial',TestemonialController::class);
 //-------------------------------------
+
+
 });
     

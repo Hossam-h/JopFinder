@@ -9,7 +9,7 @@ return[
     'edit_delete_team'=>'تعديل و حذف الفريق',
     'category'=>'الفئات',
     'question'=>'الاسئله',
-    'create_Question'=>'تكوين سؤال',
+    'create_Question'=>'انشاء سؤال',
     'edit_delete_Question'=>'تعديل او حذف سؤال',
     'services'=>'الخدمات',
     'create_services'=>'تكوين الخدمه',

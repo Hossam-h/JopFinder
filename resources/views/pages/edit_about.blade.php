@@ -27,7 +27,10 @@
           
             
                 <div class="m-2 ">
-                  <input type="file" value="" class="" name="image">  
+                   
+                  <input type="file" name="image" class="dropify" accept=".pdf,.jpg, .png, image/jpeg, image/png"
+                                data-height="70" />
+ 
                 </div>
             
 

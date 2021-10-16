@@ -25,7 +25,8 @@ class QuistionRequest extends FormRequest
     {
         return [
             'question'=>'required|string',
-                'answer'=>'required|string'
+                'answer'=>'required|string',
+                'image'=>'required|image|mimes:jpg,png,jpeg,svg|max:2048KB',
 
         ];
     }
@@ -38,6 +39,8 @@ class QuistionRequest extends FormRequest
             'question.string'=>\trans('validation.string'),
             'answer.required'=>\trans('validation.required'),
             'answer.string'=>\trans('validation.string'),
+            'image.required'=>\trans('validation.required'),
+            'image.image'=>\trans('validation.image'),
 
 
         ];
