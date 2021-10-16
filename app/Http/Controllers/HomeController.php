@@ -60,12 +60,30 @@ class HomeController extends Controller
         $search=$request->except(['_token']);
         $name_jop=$search['jop_name'];
         $name_city=$search['city'];
+        
 //serch_jops
+
+if(!empty($name_jop) && empty($name_city)){
+    $categores=Jop::where('jop_name','like','%'.$name_jop.'%')->get();
+    return view('pages.search',['jops'=>$categores]);
+       
+}elseif(empty($name_jop) && !empty($name_city)){
+    $categores=Jop::where('location','like','%'.$name_city.'%')->get();
+    return view('pages.search',['jops'=>$categores]);
+    
+}elseif(empty($name_jop) && empty($name_city)){
+    $categores='not';
+    return view('pages.search',['jops'=>$categores]);
+
+}
+else{
+    $categores=Jop::where('location','like','%'.$name_city.'%')->where('jop_name','like','%'.$name_jop.'%')->get();
+    return view('pages.search',['jops'=>$categores]);
+  
+}
         
-        $categores=Jop::where('jop_name','like','%'.$name_jop.'%')->Where('location', 'like','%'.$name_city.'%')->get();
-        
-        return view('pages.search',['jops'=>$categores]);
-        
+              
+         
     }
 
     /**

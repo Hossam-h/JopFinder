@@ -193,7 +193,7 @@
                     success:function(data){
                       console.log(data.total_data)
                       for(let i=0 ;i<data.total_data; i++){
-                        $('tbody').html(data.table_data);                    
+                        $('tbody').html(data.table_data.jop_name);                    
                       } 
                         
                      $('#total_records').text(data.total_data);

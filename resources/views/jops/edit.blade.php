@@ -65,6 +65,18 @@
             @enderror
 
 
+            <div class="row form-group">
+                <div class="col-md-12"><h3>description_Ar</h3></div>
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <textarea name="jop_description_ar" value="{{$edit->jop_description}}" class="form-control" id="" cols="30" rows="5"></textarea>
+                </div>
+              </div>
+
+              @error('jop_description')
+            <span class="alert alert-danger">{{$message}}</span>
+            @enderror
+
+
               <div class="row form-group">
                 <div class="col-md-12">
                   <input type="submit" value="Update about us" class="btn btn-primary  py-2 px-5">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2021 at 09:09 AM
+-- Generation Time: Oct 16, 2021 at 06:14 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.24
 
@@ -62,7 +62,11 @@ CREATE TABLE `categores` (
 
 INSERT INTO `categores` (`id`, `category`, `icon`, `created_at`, `updated_at`) VALUES
 (8, '{\"en\":\"Accounting\",\"ar\":\"\\u0645\\u062d\\u0627\\u0633\\u0628\\u0629\"}', 'fa-calculator', '2021-10-11 01:56:41', '2021-10-11 01:56:41'),
-(10, '{\"en\":\"Medical\",\"ar\":\"\\u0637\\u0628\\u064a\"}', 'fa-notes-medical', '2021-10-11 01:59:07', '2021-10-11 01:59:07');
+(10, '{\"en\":\"Medical\",\"ar\":\"\\u0637\\u0628\\u064a\"}', 'fa-notes-medical', '2021-10-11 01:59:07', '2021-10-11 01:59:07'),
+(11, '{\"en\":\"IT\",\"ar\":\"\\u062a\\u0643\\u0646\\u0648\\u0644\\u0648\\u062c\\u064a\\u0629 \\u0627\\u0644\\u0645\\u0639\\u0644\\u0648\\u0645\\u0627\\u062a\"}', 'fa-wifi', '2021-10-16 13:55:38', '2021-10-16 13:55:38'),
+(12, '{\"en\":\"programing\",\"ar\":\"\\u0628\\u0631\\u0645\\u062c\\u0629\"}', 'fa-laptop', '2021-10-16 13:57:13', '2021-10-16 13:57:13'),
+(13, '{\"en\":\"Designer\",\"ar\":\"\\u0645\\u0635\\u0645\\u0645\"}', 'fa-pencil-ruler', '2021-10-16 13:58:08', '2021-10-16 13:58:08'),
+(14, '{\"en\":\"Marketing\",\"ar\":\"\\u0645\\u0633\\u0648\\u0642\"}', 'fa-poll', '2021-10-16 13:59:42', '2021-10-16 13:59:42');
 
 -- --------------------------------------------------------
 
@@ -131,7 +135,9 @@ CREATE TABLE `jops` (
 --
 
 INSERT INTO `jops` (`id`, `jop_name`, `company_name`, `location`, `salary`, `jop_description`, `categore_id`, `created_at`, `updated_at`) VALUES
-(1, '{\"en\":\"FullStack web developer\",\"ar\":\"\\u0645\\u0637\\u0648\\u0631 \\u0643\\u0627\\u0645\\u0644 \\u0644\\u0644\\u0645\\u0648\\u0627\\u0642\\u0639\"}', 'Microsoft', '{\"en\":\"Cairo\",\"ar\":\"\\u0627\\u0644\\u0642\\u0627\\u0647\\u0631\\u0629\"}', 5000, '{\"en\":\"we need good developer\",\"ar\":\"\\u0646\\u0631\\u064a\\u062f \\u0645\\u0628\\u0631\\u0645\\u062c \\u0645\\u0648\\u0627\\u0642\\u0639 \\u0643\\u0627\\u0645\\u0644\"}', 10, '2021-10-11 02:01:25', '2021-10-11 02:01:25');
+(1, '{\"en\":\"FullStack web developer\",\"ar\":null}', 'Microsoft', '{\"en\":\"Cairo\",\"ar\":null}', 5000, '{\"en\":\"we need good developer\",\"ar\":\"\\u0646\\u062d\\u062a\\u0627\\u062c \\u0627\\u0644\\u064a \\u0645\\u0628\\u0631\\u0645\\u062c \\u0634\\u0627\\u0637\\u0631\"}', 12, '2021-10-11 02:01:25', '2021-10-16 14:13:25'),
+(2, '{\"en\":\"Acounter\",\"ar\":\"\\u0645\\u062d\\u0627\\u0633\\u0628\"}', 'Microsoft', '{\"en\":\"Giza\",\"ar\":\"\\u0627\\u0644\\u062c\\u064a\\u0632\\u0629\"}', 6000, '{\"en\":\"we need good acounting\",\"ar\":\"\\u0646\\u062d\\u062a\\u0627\\u062c \\u0627\\u0644\\u064a \\u0645\\u062d\\u0627\\u0633\\u0628 \\u062c\\u064a\\u062f\"}', 8, '2021-10-16 14:02:46', '2021-10-16 14:02:46'),
+(3, '{\"en\":\"network Engineering\",\"ar\":\"\\u0645\\u0647\\u0646\\u062f\\u0633 \\u0634\\u0628\\u0643\\u0627\\u062a\"}', 'Microsoft', '{\"en\":\"Helwan\",\"ar\":\"\\u062d\\u0644\\u0648\\u0627\\u0646\"}', 7000, '{\"en\":\"we need good network engineering\",\"ar\":\"\\u0646\\u062d\\u062a\\u0627\\u062c \\u0627\\u0644\\u064a \\u0645\\u0647\\u0646\\u062f\\u0633 \\u0634\\u0628\\u0643\\u0627\\u062a \\u062c\\u064a\\u062f\"}', 11, '2021-10-16 14:04:46', '2021-10-16 14:04:46');
 
 -- --------------------------------------------------------
 
@@ -461,7 +467,7 @@ ALTER TABLE `abouts`
 -- AUTO_INCREMENT for table `categores`
 --
 ALTER TABLE `categores`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `connacts`
@@ -485,7 +491,7 @@ ALTER TABLE `homes`
 -- AUTO_INCREMENT for table `jops`
 --
 ALTER TABLE `jops`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `migrations`
