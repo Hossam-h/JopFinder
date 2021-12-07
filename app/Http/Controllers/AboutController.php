@@ -20,7 +20,7 @@ class AboutController extends Controller
 
         $all_team=Team::all();
         $all_ques=Question::all();
-    
+
         return view('pages.about',[
         'all_team'=>$all_team ,
         'about_us'=>$about_us,
@@ -48,8 +48,8 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-        
-          
+
+
     }
 
     /**
@@ -71,9 +71,9 @@ class AboutController extends Controller
      */
     public function edit($id)
     {
-        
+
         $edit_about=About::find($id);
-        
+
         return view('pages.edit_about',['edit'=>$edit_about]);
 
     }
@@ -88,7 +88,7 @@ class AboutController extends Controller
     public function update(Request $request,$id)
     {
 
-        
+
         $row=About::find($id);
 
             if($row){
@@ -101,26 +101,26 @@ class AboutController extends Controller
             // ]);
 
             $image=$request->file('image');
-        
-            $image_name= rand() . '.' .$image->getClientOriginalExtension();
-        
+
+            $image_name= rand(). '.' .$image->getClientOriginalExtension();
+
             $image->move('images\team',$image_name);
-    
+
             $data['image']=$image_name;
 
             if($row->$image){
                 unlink('images/team'.$row->image);
-              
+
               }
-    
+
              $row->update([
                  'about_us'=>['en'=>$request->about_us,'ar'=>$request->about_us_ar],
                  'image'=>$image_name
-             ]); 
+             ]);
 
-            
+
             }
-           
+
        return \redirect()->route('index_about');
     }
 

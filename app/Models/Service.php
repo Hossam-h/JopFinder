@@ -9,6 +9,7 @@ class Service extends Model
 {
 
     use HasFactory;
+    // use to translate database
     use HasTranslations;
 
     protected $fillable=['description','tittle','icon'];
